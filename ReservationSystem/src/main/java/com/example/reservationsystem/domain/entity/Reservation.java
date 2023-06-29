@@ -1,5 +1,7 @@
 /*package com.example.reservationsystem.domain.entity;
 
+import java.time.LocalDate;
+
 import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Entity;
@@ -25,11 +27,22 @@ private Integer resnumber;
 private Integer pernumber;
 @ManyToOne
 @JoinColumn(name="pernumber", insertable=false, updatable=false)
-private Personal personal;
+private Guest guest;
 
 private Integer plannumber;
 @ManyToOne
-@JoinColumn(name="pernumber", insertable=false, updatable=false)
-private Plan plan;
+@JoinColumn(name="", insertable=false, updatable=false)
+private Planinfomation plan;
+
+private LocalDate arrday;
+
+private LocalDate depday;
+
+private Integer persons;
+
+private Integer roomnumber;
+@ManyToOne
+@JoinColumn(name="", insertable=false, updatable=false)
+private RoomInfomation roomnum;
 }
 */
