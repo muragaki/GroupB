@@ -6,6 +6,7 @@
 <link th:href="@{/css/login.css}" rel="styleSheet">
 </head>
 <body>
+	<div sec:authorize="${hasRole('ADMIN')}"><a th:href="@{'/admin/menu'}" >管理画面</a></div>
 	<a th:href="@{/reservationsearch}"><b>予約検索</b></a>
 	<br />
 	<a th:href="@{/guestForm}"><b>顧客検索</b></a>

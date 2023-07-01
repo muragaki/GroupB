@@ -14,35 +14,40 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name="res_table")
-public class Reservation {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Integer resnumber;
-
-private Integer pernumber;
-@ManyToOne
-@JoinColumn(name="pernumber", insertable=false, updatable=false)
-private Guest guest;
-
-private Integer plannumber;
-@ManyToOne
-@JoinColumn(name="", insertable=false, updatable=false)
-private Planinfomation plan;
-
-private LocalDate arrday;
-
-private LocalDate depday;
-
-private Integer persons;
-
-private Integer roomnumber;
-@ManyToOne
-@JoinColumn(name="", insertable=false, updatable=false)
-private RoomInfomation roomnum;
-}
-*/
+*//**
+	* 
+	* @author Katsuki
+	*
+	*//*
+		@Entity
+		@Data
+		@NoArgsConstructor
+		@AllArgsConstructor
+		@Table(name="res_table")
+		public class Reservation {
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Integer resnumber;
+		
+		private Integer pernumber;
+		@ManyToOne
+		@JoinColumn(name="pernumber", insertable=false, updatable=false)
+		private Guest guest;
+		
+		private Integer plannumber;
+		@ManyToOne
+		@JoinColumn(name="", insertable=false, updatable=false)
+		private Planinfomation plan;
+		
+		private LocalDate arrday;
+		
+		private LocalDate depday;
+		
+		private Integer persons;
+		
+		private Integer roomnumber;
+		@ManyToOne
+		@JoinColumn(name="roomnumber", insertable=false, updatable=false)
+		private RoomInformation number;
+		}
+		*/

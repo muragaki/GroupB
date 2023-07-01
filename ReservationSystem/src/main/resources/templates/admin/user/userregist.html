@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h3>新規ユーザ登録</h3>
-	<form th:action="@{/signup}" method="post" th:object="${signupForm}">
+	<form th:action="@{/admin/signup}" method="post" th:object="${signupForm}">
 		<div th:if="${signupError}">
 			<div th:text="${signupError}"></div>
 		</div>
@@ -24,6 +24,6 @@
 		<span th:errors="${signupForm.firstname}"></span><br>
 		<button type="submit">登録</button>
 	</form>
-	<a th:href="@{/loginForm}">ログイン画面</a>
+	<a th:href="@{/admin/menu}">管理者メニューへ戻る</a>
 </body>
 </html>

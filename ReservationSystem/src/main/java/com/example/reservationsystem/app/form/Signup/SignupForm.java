@@ -3,6 +3,11 @@ package com.example.reservationsystem.app.form.Signup;
 
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+/**
+ * 
+ * @author Katsuki
+ *
+ */
 
 @Data
 public class SignupForm {
