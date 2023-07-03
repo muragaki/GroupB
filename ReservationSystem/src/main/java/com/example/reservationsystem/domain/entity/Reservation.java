@@ -1,4 +1,4 @@
-/*package com.example.reservationsystem.domain.entity;
+package com.example.reservationsystem.domain.entity;
 
 import java.time.LocalDate;
 
@@ -14,11 +14,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-*//**
+/**
 	* 
 	* @author Katsuki
 	*
-	*//*
+	*/
 		@Entity
 		@Data
 		@NoArgsConstructor
@@ -37,7 +37,7 @@ import lombok.NoArgsConstructor;
 		private Integer plannumber;
 		@ManyToOne
 		@JoinColumn(name="", insertable=false, updatable=false)
-		private Planinfomation plan;
+		private Planinformation plan;
 		
 		private LocalDate arrday;
 		
@@ -50,4 +50,4 @@ import lombok.NoArgsConstructor;
 		@JoinColumn(name="roomnumber", insertable=false, updatable=false)
 		private RoomInformation number;
 		}
-		*/
+		

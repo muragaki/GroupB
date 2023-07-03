@@ -7,9 +7,10 @@
 </head>
 <body>
 	<div sec:authorize="${hasRole('ADMIN')}"><a th:href="@{'/admin/menu'}" >管理画面</a></div>
-	<a th:href="@{/reservationsearch}"><b>予約検索</b></a>
+	
+	<a th:href="@{/reservation}"><b>予約検索</b></a>
 	<br />
-	<a th:href="@{/guestForm}"><b>顧客検索</b></a>
+	<a th:href="@{/guestsearch}"><b>顧客検索</b></a>
 	<br />
 	<a th:href="@{/roomsearch}"><b>客室状況</b></a>
 	<br />
