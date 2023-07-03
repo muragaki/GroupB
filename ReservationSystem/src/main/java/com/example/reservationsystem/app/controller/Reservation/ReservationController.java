@@ -14,7 +14,7 @@ public class ReservationController {
 	
 	@GetMapping("reservation")
 	String reservation() {
-		return "reservation";
+		return "reservation/reservationview";
 	}
 
 }
