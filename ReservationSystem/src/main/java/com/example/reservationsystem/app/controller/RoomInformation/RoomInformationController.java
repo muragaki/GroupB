@@ -10,9 +10,9 @@ import com.example.reservationsystem.domain.service.RoomInformationService.RoomI
 public class RoomInformationController {
 	@Autowired
 	RoomInformationService RoomInformationService ;
-@GetMapping("room")
+@GetMapping("roominformation")
 String room() {
-	return "room";
+	return "information/roominformation";
 }
 
 	
