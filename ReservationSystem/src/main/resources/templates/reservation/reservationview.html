@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Reserve Search</title>
 
+<head>
+	<meta charset="UTF-8">
+	<title>Reserve Search</title>
 </head>
+
 <body>
+	<form th:action="@{/result}" method="post" th:object="${reservation}">
+		<table border="1">
+			<tr>
+				<td><label><b>FirstName</b></label></td>
+				<td><input type="text" name="*{guest.firstname}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>LastName</b></label></td>
+				<td><input type="text" name="*{guest.lastname}" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="確認" />
+	</form>
+
+	<table border="1" th:object="${reservationForm}">
+		<tr th:each="reservation : *{reservationList}" align="center">
+			<td th:text="${reservation.guest.firstname}"></td>
+			<td th:text="${reservation.guest.lastname}"></td>
+			<td th:text="${reservation.resnumber}" align="right"></td>
+			<td th:text="${reservation.arrday}" align="right"></td>
+<!--			<input type="hidden" th:field="*{salesList[__${stat.index}__].salesid}" />
+			<input type="hidden" th:field="*{salesList[__${stat.index}__].itemcode}" />
+			<input type="hidden" th:field="*{salesList[__${stat.index}__].item.itemname}" />
+			<input type="hidden" th:field="*{salesList[__${stat.index}__].item.itemprice}" />
+			<input type="hidden" th:field="*{salesList[__${stat.index}__].sales}" />-->
+		</tr>
+</table>
 </body>
+
 </html>
