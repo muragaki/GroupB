@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.reservationsystem.app.form.Reservation.ReservationForm;
 import com.example.reservationsystem.domain.entity.Reservation;
@@ -27,6 +26,7 @@ public class ReservationController {
 		return "reservation/reservationview";
 	}
 	
+<<<<<<< HEAD
 	@PostMapping("result")
 	String result(@ModelAttribute Reservation reservation,@ModelAttribute ReservationForm reservationForm,Model model) {
 		model.addAttribute("reservation",reservation);
@@ -34,5 +34,13 @@ public class ReservationController {
 		model.addAttribute("reservationForm",reservationForm);
 		return "redirect:reservation";
 	}
+=======
+//	@PostMapping("result")
+//	String result(@ModelAttribute Reservation reservation,@ModelAttribute ReservationForm reservationForm,Model model) {
+//		model.addAttribute(reservation);
+//		model.addAttribute("reservationForm","reservationForm");
+//		return "redirect:/reservation/reservationview";
+//	}
+>>>>>>> branch 'master' of https://github.com/muragaki/GroupB.git
 }
 
