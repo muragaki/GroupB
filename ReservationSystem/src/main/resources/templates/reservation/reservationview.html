@@ -10,6 +10,10 @@
 	<form th:action="@{/result}" method="post" th:object="${reservation}">
 		<table border="1">
 			<tr>
+				<td><label>FirstName</label></td>
+				<td><input type="text" name="*{guest.firstname}" /></td>
+			</tr>
+			<tr>
 				<td><label><b>FirstName</b></label></td>
 				<td><input type="text" name="*{guest.firstname}" /></td>
 			</tr>
@@ -27,13 +31,13 @@
 			<td th:text="${reservation.guest.lastname}"></td>
 			<td th:text="${reservation.resnumber}" align="right"></td>
 			<td th:text="${reservation.arrday}" align="right"></td>
-<!--			<input type="hidden" th:field="*{salesList[__${stat.index}__].salesid}" />
+			<!--			<input type="hidden" th:field="*{salesList[__${stat.index}__].salesid}" />
 			<input type="hidden" th:field="*{salesList[__${stat.index}__].itemcode}" />
 			<input type="hidden" th:field="*{salesList[__${stat.index}__].item.itemname}" />
 			<input type="hidden" th:field="*{salesList[__${stat.index}__].item.itemprice}" />
 			<input type="hidden" th:field="*{salesList[__${stat.index}__].sales}" />-->
 		</tr>
-</table>
+	</table>
 </body>
 
 </html>

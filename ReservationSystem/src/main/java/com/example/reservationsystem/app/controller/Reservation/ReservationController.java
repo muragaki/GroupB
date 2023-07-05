@@ -20,7 +20,7 @@ public class ReservationController {
 	ReservationService reservationService;
 	
 	@GetMapping("reservation")
-	String reservation(@ModelAttribute Reservation reservation,@ModelAttribute ReservationForm reservationForm,Model model) {
+	String reservation(@ModelAttribute("reservation") Reservation reservation,@ModelAttribute ReservationForm reservationForm,Model model) {
 		reservationForm.setReservationList( (ArrayList<Reservation>) reservationService.readAll());
 		model.addAttribute("reservation", reservation);
 		model.addAttribute("reservationForm",reservationForm);
@@ -29,9 +29,10 @@ public class ReservationController {
 	
 	@PostMapping("result")
 	String result(@ModelAttribute Reservation reservation,@ModelAttribute ReservationForm reservationForm,Model model) {
-		model.addAttribute(reservation);
-		model.addAttribute("reservationForm","reservationForm");
-		return "redirect:/reservation/reservationview";
+		model.addAttribute("reservation",reservation);
+		reservationForm.setReservationList( reservationService.findReservation(reservation));
+		model.addAttribute("reservationForm",reservationForm);
+		return "redirect:reservation";
 	}
 }
 
