@@ -1,5 +1,7 @@
 package com.example.reservationsystem.app.controller.GuestController;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +19,12 @@ public class GuestController {
 	GuestService guestRe;
 	@GetMapping("guestForm")
 	String guestForm(@ModelAttribute Guest guest,@ModelAttribute GuestForm guestForm, Model model) {
-		model.addAttribute("guest","guest");
+		guestForm.setGuestList( (ArrayList<Guest>) guestRe.readAll());
+		model.addAttribute("guest",guest);
+		model.addAttribute("guestForm",guestForm);
 		return "guest/guestForm";
 	}
+	
+	
 
 }

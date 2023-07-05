@@ -27,5 +27,5 @@ private LocalDate dateofbirth;
 @Enumerated(EnumType.STRING)
 private Address address;
 private String phonenumber;
-private String malladdress;
+private String mailaddress;
 }

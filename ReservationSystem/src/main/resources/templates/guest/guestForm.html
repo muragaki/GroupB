@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http;//www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Guest Form</title>
+	<meta charset="UTF-8">
+	<title>Guest Form</title>
 </head>
+
 <body>
-	<a th:href="@{/guestsearch}"><b>顧客検索</b></a>
-	<br />
-	<a th:href="@{/roomsearch}"><b>客室状況</b></a>
+	<form th:action="@{/guest} " method="post" th:object="${guest}">
+		<table border="1">
+		<tr>
+			<td><label><b>first Name</b></label></td>
+			<td><input type="text" name="*{firstname}" /></td>
+		</tr>
+		<tr>
+			<td><label><b>last Name</b></label></td>
+			<td><input type="text" name="*{lastname}" /></td>
+		</tr>
+
+		<tr>
+			<td><label><b>電話番号</b></label></td>
+			<td><input type="text" name="*{phonenumber}" /></td>
+		</tr>
+		<tr>
+			<td><label><b>E-mail</b></label></td>
+			<td><input type="text" name="*{mailaddress}" /></td>
+		</tr>
+		<tr>
+			<td><label><b>Address</b></label></td>
+			<td><input type="text" name="*{address}" /></td>
+		</tr>
+		</table>
+	</form>
+	
+	<table border="1" th:object="${guestForm}">
+		<tr th:each="guest: *{guestList}"align="center">
+			<td th:text="${guest.firstname}"></td>
+			<td th:text="${guest.lastname}"></td>
+			<td th:text="${guest.phonenumber}"></td>
+			<td th:text="${guest.mailaddress}"></td>
+			<td th:text="${guest.address}"></td>
+	</tr>
+	</table>
 </body>
+
 </html>
