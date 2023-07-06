@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Plan</title>
-</head>
-<body>
 
+<head>
+	<meta charset="UTF-8">
+	<title>Plan</title>
+</head>
+
+<body>
+	
+	<table border="1" th:object="${planinfomationform}">
+		<tr th:each="planinfomation: *{planList}" align="center">
+			<td th:text="${planinfomation.plancode}"></td>
+			<td th:text="${planinfomation.planname}"></td>
+			<td th:text="${planinfomation.roomcode}"></td>
+		</tr>
+	</table>
 </body>
+
 </html>
