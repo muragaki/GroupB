@@ -16,11 +16,11 @@ public class BookingDetails {
 	BookingDetailsService bookingDetailsservice;
 	
 	@GetMapping("/bookingdetails")
-	String example(@RequestParam("reservation")String resnumber, Model model) {
+	String example(@RequestParam("reservation")Integer resnumber, Model model) {
 		//reservation = bookingDetailsservice.example(1);
-		Integer res  = Integer.parseInt(resnumber);
+		//Integer res  = Integer.parseInt(resnumber);
 		Reservation reservation = new Reservation();
-		reservation = bookingDetailsservice.findOne(res);
+		reservation = bookingDetailsservice.findOne(resnumber);
 		model.addAttribute("reservation",reservation);
 	return "bookingdetails/bookingdetailsview";
 }
