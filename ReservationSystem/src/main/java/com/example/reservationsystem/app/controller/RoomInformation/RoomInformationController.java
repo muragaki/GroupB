@@ -12,7 +12,7 @@ public class RoomInformationController {
 	RoomInformationService RoomInformationService ;
 @GetMapping("roominformation")
 String room() {
-	return "information/roominformation";
+	return "roominformation/roominformationview";
 }
 
 	
