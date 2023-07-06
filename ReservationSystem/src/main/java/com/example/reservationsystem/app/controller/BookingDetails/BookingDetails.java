@@ -17,10 +17,7 @@ public class BookingDetails {
 	
 	@GetMapping("/bookingdetails")
 	String example(@RequestParam("reservation")Integer resnumber, Model model) {
-		//reservation = bookingDetailsservice.example(1);
-		//Integer res  = Integer.parseInt(resnumber);
-		Reservation reservation = new Reservation();
-		reservation = bookingDetailsservice.findOne(resnumber);
+			Reservation reservation = bookingDetailsservice.findOne(resnumber);
 		model.addAttribute("reservation",reservation);
 		return "bookingdetails/bookingdetailsview";
 	}

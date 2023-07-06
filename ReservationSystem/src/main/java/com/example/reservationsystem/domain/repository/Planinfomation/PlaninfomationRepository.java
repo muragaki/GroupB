@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.reservationsystem.domain.entity.Planinformation;
 
 public interface PlaninfomationRepository extends JpaRepository<Planinformation, Integer> {
-
+Planinformation findByPlancode(String plancode);
+void deleteByPlancode(String plancode);
 }

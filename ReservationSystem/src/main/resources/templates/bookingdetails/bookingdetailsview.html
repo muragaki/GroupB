@@ -10,17 +10,23 @@
 	<form action="@{/reservation}" method="get" th:object="${reservation}">
 		<table border="1">
 			<tr>
-				<td th:text="*{guest.firstname}"></td>
+				<th align="center"	><p>性</p></th>
+				<td th:text="*{guest.firstname}" align="center"></td>
+				
+				<th><p>名　　　　　</p></th>
+				<td th:text="*{guest.lastname}"></td>
 			</tr>
-			<td th:text="*{guest.lastname}"></td>
 			<tr>
+				<th><p>予約番号　</p></th>
 				<td th:text="*{resnumber}"></td>
 			</tr>
 			<tr>
+				<th><p>到着日　</p></th>
 				<td th:text="*{arrday}"></td>
 			</tr>
 		</table>
 
 	</form>
+	<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
 
 </html>

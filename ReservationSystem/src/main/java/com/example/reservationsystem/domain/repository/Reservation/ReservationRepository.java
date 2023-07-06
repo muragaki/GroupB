@@ -6,4 +6,5 @@ import com.example.reservationsystem.domain.entity.Reservation;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
 	Reservation findByResnumber(Integer resnumber);
+	void deleteByResnumber(Integer resnumber);
 }
