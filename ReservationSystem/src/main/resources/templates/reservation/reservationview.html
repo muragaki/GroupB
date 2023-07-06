@@ -26,18 +26,21 @@
 	</form>
 
 	<table border="1" th:object="${reservationForm}">
-		<tr th:each="reservation : *{reservationList}" align="center">
-			<form th:action="@{/bookingdetails}" method="get" th:object="${reservation}">
+		<tr th:each="reservation,stat : *{reservationList}" align="center">
+			<form th:action="@{/bookingdetails}" method="get">
 				<td th:text="${reservation.guest.firstname}"></td>
-<!--				<input type="hidden" th:field="${reservation.guest.firstname}" />-->
 				<td th:text="${reservation.guest.lastname}"></td>
-<!--				<input type="hidden" th:field="${reservation.guest.lastname}" />-->
 				<td th:text="${reservation.resnumber}" align="right"></td>
-<!--				<input type="hidden" th:field="${reservation.resnumber}" />-->
 				<td th:text="${reservation.arrday}" align="right"></td>
-<!--				<input type="hidden" th:field="${reservation.arrday}" />-->
-				<input type="hidden" name="resnumber" value="*{reservation.resnumber}" />
+				<td th:text="${reservation.resnumber}" ></td>
+<!--				<input type="hidden" input value="${reservation.arrday}" /><input type="hidden"-->
 				<td><input type="submit" value="編集" /></td>
+				<input type="hidden" name="reservation" value="*{reservationList[__${stat.index}__].resnumber}" />
+<!--						<input type="hidden" th:field="*{reservationList[__${stat.index}__].item.itemname}" />-->
+<!--						<input type="hidden" th:field="*{reservationList[__${stat.index}__].item.itemprice}" />-->
+<!--						<input type="text" th:field="*{reservationList[__${stat.index}__].sales}" />-->
+<!--						<span th:errors="*{salesList[__${stat.index}__].sales}"></span>-->
+			
 			</form>
 		</tr>
 	</table>

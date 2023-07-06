@@ -12,9 +12,9 @@ public class BookingDetailsService {
 @Autowired
 ReservationRepository reservationRepository;
 
-public Reservation example(Integer a) {
-	return reservationRepository.findByResnumber(a);
-}
+//public Reservation example(Integer a) {
+//	return reservationRepository.findByResnumber(a);
+//}
 
 public Reservation findOne(Integer resnumber) {
 	return reservationRepository.findByResnumber(resnumber);
