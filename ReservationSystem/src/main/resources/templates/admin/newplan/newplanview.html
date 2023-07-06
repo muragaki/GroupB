@@ -5,6 +5,24 @@
 <title>New Plan</title>
 </head>
 <body>
+	
+	<form th:action="@{/admin/menu}" method="get" th:object="${planinfomation}">
+		<table border="1">
+			<tr>
+				<td><label>Plan Code</label></td>
+				<td><input type="text" name="*{planinfomation.plancode}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>Plan Name</b></label></td>
+				<td><input type="text" name="*{planinfomation.planname}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>Room Code</b></label></td>
+				<td><input type="text" name="*{planinfomation.roomcode}" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="プラン登録" />
+	</form>
 
 </body>
 </html>

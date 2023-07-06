@@ -22,6 +22,6 @@ public class BookingDetails {
 		Reservation reservation = new Reservation();
 		reservation = bookingDetailsservice.findOne(resnumber);
 		model.addAttribute("reservation",reservation);
-	return "bookingdetails/bookingdetailsview";
-}
+		return "bookingdetails/bookingdetailsview";
+	}
 }
