@@ -35,7 +35,7 @@
 				<td th:text="${reservation.resnumber}" ></td>
 <!--				<input type="hidden" input value="${reservation.arrday}" /><input type="hidden"-->
 				<td><input type="submit" value="編集" /></td>
-				<input type="hidden" name="reservation" value="*{reservationList[__${stat.index}__].resnumber}" />
+				<input type="hidden" name="reservation" th:value="${reservation.resnumber}" />
 <!--						<input type="hidden" th:field="*{reservationList[__${stat.index}__].item.itemname}" />-->
 <!--						<input type="hidden" th:field="*{reservationList[__${stat.index}__].item.itemprice}" />-->
 <!--						<input type="text" th:field="*{reservationList[__${stat.index}__].sales}" />-->
