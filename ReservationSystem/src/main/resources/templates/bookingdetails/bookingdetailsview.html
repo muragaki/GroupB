@@ -10,8 +10,14 @@
 	<form action="@{/reservation}" method="get" th:object="${reservation}">
 		<table border="1">
 			<tr>
-				<td>
-
+				<td th:text="*{guest.firstname}"></td>
+			</tr>
+			<td th:text="*{guest.lastname}"></td>
+			<tr>
+				<td th:text="*{resnumber}"></td>
+			</tr>
+			<tr>
+				<td th:text="*{arrday}"></td>
 			</tr>
 		</table>
 
