@@ -18,7 +18,8 @@ public class Planinformation {
  @Id
  private String plancode;
  private String planname;
- private String roomcode;;
-
+ private String roomcode;
+ private String roomname;
+ private String remarks;
 
 }
