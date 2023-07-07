@@ -26,13 +26,13 @@ public class SignupController {
 	
 	@GetMapping("signup")
 	public String signup(SignupForm sigupForm ) {
-		return "admin/user/userregist";
+		return "admin/signup/signup";
 	}
 	
 	@PostMapping("signup")
 	public String userregist(@ModelAttribute("signupForm") @Validated SignupForm signupForm, BindingResult br, Model model) {
 		if (br.hasErrors()) {
-			return "admin/user/userregist";
+			return "admin/signup/signup";
 		}
 		User user = new User(signupForm.getUsername(),
 				signupForm.getPassword(),
