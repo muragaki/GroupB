@@ -19,4 +19,8 @@ public class PlanService {
 		return (ArrayList<Planinformation>) planinfomationRepository.findAll();
 		
 	}
+	public void save(Planinformation planinformation) {
+		planinfomationRepository.save(planinformation);
+		
+	}
 }
