@@ -24,7 +24,7 @@ public class NewPlanController {
 		return "/admin/newplan/newplanview";
 	}
 	@PostMapping("/complete")
-	String complete(@ModelAttribute("planinformation") Planinformation planinformation,Model model) {
+	String complete(Planinformation planinformation,Model model) {
 		planService.save(planinformation);
 		return "/admin/complete/completeview";
 	}
