@@ -4,44 +4,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Guest Form</title>
+	<link th:href="@{Main.css}" rel="styleSheeet">
 </head>
 
 <body>
-	<form th:action="@{/guest} " method="post" th:object="${guest}">
-		<table border="1">
-		<tr>
-			<td><label><b>first Name</b></label></td>
-			<td><input type="text" name="*{firstname}" /></td>
-		</tr>
-		<tr>
-			<td><label><b>last Name</b></label></td>
-			<td><input type="text" name="*{lastname}" /></td>
-		</tr>
-
-		<tr>
-			<td><label><b>電話番号</b></label></td>
-			<td><input type="text" name="*{phonenumber}" /></td>
-		</tr>
-		<tr>
-			<td><label><b>E-mail</b></label></td>
-			<td><input type="text" name="*{mailaddress}" /></td>
-		</tr>
-		<tr>
-			<td><label><b>Address</b></label></td>
-			<td><input type="text" name="*{address}" /></td>
-		</tr>
-		</table>
-	</form>
-	
 	<table border="1" th:object="${guestForm}">
-		<tr th:each="guest: *{guestList}"align="center">
-			<td th:text="${guest.firstname}"></td>
+		<tr>
+			<th>姓(Last Name)</th>
+			<th>名(First Name)</th>
+			<th>電話番号</th>
+			<th>E-mail</th>
+			<th>アドレス</th>
+		</tr>
+		
+		<tr th:each="guest: *{guestList}" align="center">
+			<form th:action="@{/twoguest}" method="get">
+			<td th:text="${guest.guestcode}"></td>
 			<td th:text="${guest.lastname}"></td>
 			<td th:text="${guest.phonenumber}"></td>
 			<td th:text="${guest.mailaddress}"></td>
-			<td th:text="${guest.address}"></td>
-	</tr>
+			<td th:text="${guest.mailaddress}"></td>
+			<td><input type="submit" value="詳細" /></td>
+				<input type="hidden" name="guest" th:value="${guest.guestcode}" />
+			</form>
+		</tr>
 	</table>
+	<a th:href="@{/newreservationview}">新規登録を行う</a>
+		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
 </body>
 
 </html>

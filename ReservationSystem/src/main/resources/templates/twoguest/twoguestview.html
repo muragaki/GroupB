@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Two Guest</title>
+	<meta charset="UTF-8">
+	<title>Two Guest</title>
 </head>
 
 <body>
-	
+	<table border="1" th:object="${guest}">
+		<tr>
+			<th>姓(Last Name)</th>
+			<th>名(First Name)</th>
+			<th>電話番号</th>
+			<th>到着日</th>
+			<th>E-mail</th>
+		</tr>
+		<tr>
+			<th align="center">
+				<p>性</p>
+			</th>
+			<td th:text="*{firstname}" align="center"></td>
+
+			<th>
+				<p>名　　　　　</p>
+			</th>
+			<td th:text="*{lastname}"></td>
+		</tr>
+			<th>
+				<p>電話番号　</p>
+			</th>
+			<td th:text="*{guest.phonenumber}"></td>
+		</tr>
+		<tr>
+			<th>
+				<p>到着日　</p>
+			</th>
+			<td th:text="*{arrday}"></td>
+		</tr>
+		<tr>
+			<th>
+				<p>E-mail　</p>
+			</th>
+			<td th:text="*{mailadress}"></td>
+		</tr>
+	</table>
+
+	</form>
+	</form>
+	</tr>
+	</table>
+	<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
 
 </body>
+
 </html>
