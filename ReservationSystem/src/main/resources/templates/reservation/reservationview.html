@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<form th:action="@{/result}" method="post" th:object="${reservation}">
+<!--	<form th:action="@{/result}" method="post" th:object="${reservation}">
 		<table border="1">
 			<tr>
 				<td><label>FirstName</label></td>
@@ -24,26 +24,28 @@
 		</table>
 		<input type="submit" value="確認" />
 	</form>
-
+-->
+	
 	<table border="1" th:object="${reservationForm}">
+		<tr>
+			<th>姓(Last Name)</th>
+			<th>名(First Name)</th>
+			<th>予約番号</th>
+			<th>到着日</th>
+			<th>　　</th>
+		</tr>
 		<tr th:each="reservation,stat : *{reservationList}" align="center">
 			<form th:action="@{/bookingdetails}" method="get">
 				<td th:text="${reservation.guest.firstname}"></td>
 				<td th:text="${reservation.guest.lastname}"></td>
 				<td th:text="${reservation.resnumber}" align="right"></td>
 				<td th:text="${reservation.arrday}" align="right"></td>
-				<td th:text="${reservation.resnumber}" ></td>
-<!--				<input type="hidden" input value="${reservation.arrday}" /><input type="hidden"-->
 				<td><input type="submit" value="編集" /></td>
 				<input type="hidden" name="reservation" th:value="${reservation.resnumber}" />
-<!--						<input type="hidden" th:field="*{reservationList[__${stat.index}__].item.itemname}" />-->
-<!--						<input type="hidden" th:field="*{reservationList[__${stat.index}__].item.itemprice}" />-->
-<!--						<input type="text" th:field="*{reservationList[__${stat.index}__].sales}" />-->
-<!--						<span th:errors="*{salesList[__${stat.index}__].sales}"></span>-->
-			
 			</form>
 		</tr>
 	</table>
+
 </body>
 
 </html>

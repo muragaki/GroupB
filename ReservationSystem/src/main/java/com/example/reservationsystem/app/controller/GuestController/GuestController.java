@@ -18,6 +18,7 @@ public class GuestController {
 	@Autowired
 	GuestService guestRe;
 	@GetMapping("guestForm")
+	
 	String guestForm(@ModelAttribute Guest guest,@ModelAttribute GuestForm guestForm, Model model) {
 		guestForm.setGuestList( (ArrayList<Guest>) guestRe.readAll());
 		model.addAttribute("guest",guest);

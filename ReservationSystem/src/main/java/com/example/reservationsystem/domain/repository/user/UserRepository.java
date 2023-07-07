@@ -10,4 +10,6 @@ import com.example.reservationsystem.domain.entity.User;
  *
  */
 public interface UserRepository extends JpaRepository<User, String> {
+	User findByUserId(String userId);
+	void deleteByUserId(String userId);
 }

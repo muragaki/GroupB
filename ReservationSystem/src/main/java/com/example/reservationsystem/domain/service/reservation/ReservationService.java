@@ -1,4 +1,4 @@
-package com.example.reservationsystem.domain.service.Resavation;
+package com.example.reservationsystem.domain.service.reservation;
 
 import java.util.ArrayList;
 import java.util.List;
