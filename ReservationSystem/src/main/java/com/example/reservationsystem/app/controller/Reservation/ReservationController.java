@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.example.reservationsystem.app.form.Reservation.ReservationForm;
 import com.example.reservationsystem.domain.entity.Reservation;
-import com.example.reservationsystem.domain.service.Resavation.ReservationService;
+import com.example.reservationsystem.domain.service.reservation.ReservationService;
 
 @Controller
 
