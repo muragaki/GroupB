@@ -5,6 +5,25 @@
 <title>プラン一覧</title>
 </head>
 <body>
+	
+	
+	<table border="1">
+		<tr>
+			<th>プラン</th>
+			<th>内容</th>
+			
+		</tr>
+		<tr th:each="plan: ${planlist}" align="center">
+			<form th:action="@{register}" method="get">
+				<td th:text="${plan.planname}"></td>
+				<td th:text="${plan.remarks}"></td>
+				
+				<td><input type="submit" value="予約" /></td>
+
+			</form>
+		</tr>
+	</table>
+		
 
 </body>
 </html>
