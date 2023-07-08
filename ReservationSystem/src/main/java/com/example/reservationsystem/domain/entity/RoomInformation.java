@@ -18,5 +18,5 @@ public class RoomInformation {
 	@Id
 	private String roomnumber;
 	private String roomname;
-	private int	   roomsize;
+	private	Integer roomsize;
 }

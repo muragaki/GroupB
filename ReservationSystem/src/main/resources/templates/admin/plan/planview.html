@@ -12,9 +12,12 @@
 		<tr th:each="planinfomation: *{planList}" align="center">
 			<td th:text="${planinfomation.plancode}"></td>
 			<td th:text="${planinfomation.planname}"></td>
-			<td th:text="${planinfomation.roomcode}"></td>
+			<td th:text="${planinfomation.roomnumber}"></td>
 		</tr>
 	</table>
+	<a th:href="@{/admin/newplan}"><b>NewPlan</b></a>
+	<br>
+	<a th:href="@{/admin/menu}"><b>menu</b></a>
 </body>
 
 </html>

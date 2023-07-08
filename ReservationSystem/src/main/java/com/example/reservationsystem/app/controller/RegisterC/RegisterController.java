@@ -22,8 +22,6 @@ String register(@ModelAttribute String register , Model model) {
 	ArrayList<Reservation>register1 =new ArrayList<Reservation>();
 	register1=registerservice.register();
 	model.addAttribute("register",register1);
-	
-	
 	return "register/registerview";
 }
 }

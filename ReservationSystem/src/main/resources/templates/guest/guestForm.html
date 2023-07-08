@@ -27,9 +27,11 @@
 			<td><input type="submit" value="詳細" /></td>
 				<input type="hidden" name="guest" th:value="${guest.guestcode}" />
 			</form>
+			<td><a th:href="@{/newreservationview}">新規予約</a></td>
+				<input type="hidden" name="guest" th:value="${guest.guestcode}" />
 		</tr>
 	</table>
-	<a th:href="@{/newreservationview}">新規登録を行う</a>
+	<a th:href="@{/one}">新規登録を行う</a>
 		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
 </body>
 

@@ -1,5 +1,8 @@
 package com.example.reservationsystem.app.controller.Admin.Signup;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +27,15 @@ public class SignupController {
 	@Autowired
 	SuperUserDetailsService superUserDetailsService;
 	
+	/**
+	 * ビュー先でセレクトタグを使うためenumクラスをセット
+	 * @param signupForm
+	 * @returnアカウント作成ビュー
+	 */
 	@GetMapping("signup")
-	public String signup(SignupForm sigupForm ) {
+	public String signup(SignupForm signupForm ) {
+			signupForm.setRolename(RoleName.USER);
+			signupForm.setRoleNameList(new ArrayList<RoleName>(Arrays.asList(RoleName.ADMIN,RoleName.USER)));
 		return "admin/signup/signup";
 	}
 	
@@ -38,7 +48,7 @@ public class SignupController {
 				signupForm.getPassword(),
 				signupForm.getFirstname(),
 				signupForm.getLastname(),
-				RoleName.USER);
+				signupForm.getRolename());
 		superUserDetailsService.userregist(user);
 		return "redirect:/admin/menu";
 	}

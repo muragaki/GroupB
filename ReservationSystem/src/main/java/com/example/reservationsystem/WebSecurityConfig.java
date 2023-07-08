@@ -34,12 +34,11 @@ public class WebSecurityConfig {
 				.failureUrl("/loginForm?error")
 				.permitAll()
 		).logout(logout -> logout
-				.logoutSuccessUrl("/loginForm")
+				.logoutSuccessUrl("/planlist")
 		).authorizeHttpRequests(authz -> authz
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-				.requestMatchers("/").permitAll()
+				.requestMatchers("/","/planlist","/newreservationview","/register").permitAll()
 				.requestMatchers("/mainmenu").permitAll()
-				.requestMatchers("/signup").permitAll()
 				.requestMatchers("/admin/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
 		);

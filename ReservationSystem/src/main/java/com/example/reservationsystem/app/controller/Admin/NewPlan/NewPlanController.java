@@ -21,12 +21,12 @@ public class NewPlanController {
 	@GetMapping("/newplan")
 	String plan(@ModelAttribute("planinformation") Planinformation planinformation,Model model) {
 		model.addAttribute("planinformation",planinformation);
-		return "/admin/newplan/newplanview";
+		return "admin/newplan/newplanview";
 	}
 	@PostMapping("/complete")
 	String complete(Planinformation planinformation,Model model) {
 		planService.save(planinformation);
-		return "/admin/complete/completeview";
+		return "admin/complete/completeview";
 	}
 	
 

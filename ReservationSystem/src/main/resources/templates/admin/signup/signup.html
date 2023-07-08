@@ -22,6 +22,11 @@
 		<label for="firstname">名(First Name)：</label>
 		<input type="text" id="firstname" name="firstname" th:value="${signupForm.firstname}">
 		<span th:errors="${signupForm.firstname}"></span><br>
+		<select name="rolename" th:field="${signupForm.rolename}">
+			<option th:each="role:${signupForm.roleNameList}" th:value="${role.value}" th:text="${role.text}">			
+			</option>
+		</select>
+		<input type="hidden" th:field="${signupForm.roleNameList}" />
 		<button type="submit">登録</button>
 	</form>
 	<a th:href="@{/admin/menu}">管理者メニューへ戻る</a>
