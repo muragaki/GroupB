@@ -19,7 +19,7 @@
 		
 		<tr th:each="guest: *{guestList}" align="center">
 			<form th:action="@{/twoguest}" method="get">
-			<td th:text="${guest.guestcode}"></td>
+			<td th:text="${guest.firstname}"></td>
 			<td th:text="${guest.lastname}"></td>
 			<td th:text="${guest.phonenumber}"></td>
 			<td th:text="${guest.mailaddress}"></td>
