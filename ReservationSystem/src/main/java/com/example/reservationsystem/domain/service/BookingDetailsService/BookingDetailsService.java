@@ -19,4 +19,5 @@ public Reservation example(Integer a) {
 public Reservation findOne(Integer resnumber) {
 	return reservationRepository.findByResnumber(resnumber);
 }
+
 }

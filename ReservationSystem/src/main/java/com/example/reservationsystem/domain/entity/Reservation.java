@@ -35,7 +35,7 @@ import lombok.NoArgsConstructor;
 		
 		private  String plancode;
 		@ManyToOne
-		@JoinColumn(name="plancode;", insertable=false, updatable=false)
+		@JoinColumn(name="plancode", insertable=false, updatable=false)
 		private Planinformation plan;
 		
 		private LocalDate arrday;
