@@ -16,17 +16,15 @@ import lombok.NoArgsConstructor;
 @Table(name = "planinfomation")
 
 public class Planinformation {
- @Id
- private String plancode;
- private String planname;
- private String roomcode;
+	@Id
+	private String plancode;
+	private String planname;
 
 	private String roomnumber;
 	@ManyToOne
 	@JoinColumn(name = "roomnumber", insertable = false, updatable = false)
 	private RoomInformation room;
 
- private String roomname;
- private String remarks;
+	private String remarks;
 
 }
