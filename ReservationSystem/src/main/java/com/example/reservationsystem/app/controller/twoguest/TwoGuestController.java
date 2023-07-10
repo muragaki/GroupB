@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.reservationsystem.domain.entity.Guest;
 import com.example.reservationsystem.domain.service.TwoGuest.TwoGuestService;
@@ -15,8 +16,10 @@ public class TwoGuestController {
 	@Autowired
 	TwoGuestService twoguestService;
 
-	@GetMapping("twoguest")
-	String reservation2() {
+	@GetMapping("/twoguest")
+	String example(@RequestParam("guest")String guestcode, Model model) {
+			Guest guest = twoguestService.findOne(guestcode);
+		model.addAttribute("guest",guest);
 		return "twoguest/twoguestview";
 	}
 
