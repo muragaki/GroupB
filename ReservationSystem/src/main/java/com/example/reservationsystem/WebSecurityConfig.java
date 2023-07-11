@@ -37,7 +37,7 @@ public class WebSecurityConfig {
 				.logoutSuccessUrl("/planlist")
 		).authorizeHttpRequests(authz -> authz
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-				.requestMatchers("/","/planlist","/newreservationview","/register").permitAll()
+				.requestMatchers("/","/planlist","/register").permitAll()
 				.requestMatchers("/mainmenu").permitAll()
 				.requestMatchers("/admin/**").hasRole("ADMIN")
 				.anyRequest().authenticated()

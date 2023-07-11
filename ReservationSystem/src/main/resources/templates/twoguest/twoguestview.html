@@ -20,28 +20,32 @@
 				<p>性</p>
 			</th>
 			<td th:text="*{firstname}" align="center"></td>
-
+			<input type="hidden" name="firstname" th:value="*{firstname}"> 
 			<th>
 				<p>名　　　　　</p>
 			</th>
 			<td th:text="*{lastname}"></td>
+			<input type="hidden" name="lastname" th:value="*{lastname}"> 
 		</tr>
 		<th>
 			<p>電話番号　</p>
 		</th>
 		<td th:text="*{phonenumber}"></td>
+			<input type="hidden" name="phonenumber" th:value="*{phonenumber}"> 
 		</tr>
 		<tr>
 			<th>
 				<p>生年月日　</p>
 			</th>
 			<td th:text="*{dateofbirth}"></td>
+			<input type="hidden" name="dateofbirth" th:value="*{dateofbirth}"> 
 		</tr>
 		<tr>
 			<th>
 				<p>E-mail　</p>
 			</th>
 			<td th:text="*{mailaddress}"></td>
+			<input type="hidden" name="mailaddress" th:value="*{mailaddress}"> 
 		</tr>
 	</table>
 
