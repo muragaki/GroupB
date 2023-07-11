@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.reservationsystem.app.form.Guest.GuestEditForm;
@@ -35,4 +36,8 @@ public class TwoGuestController {
 		return "twoguest/oneview";
 	}
 
+	@PostMapping("guestsave")
+	String guestsave() {
+		return "guestsave/guestsave";
+	}
 }
