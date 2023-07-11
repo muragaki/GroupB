@@ -15,7 +15,7 @@ public class NewReservationController {
 	@Autowired
 	NewResavationService newreservationservice;
 	
-	@GetMapping("new")
+	@GetMapping("newreservationview")
 	String reservation1(@ModelAttribute Reservation reservation, Model model) {
 		model.addAttribute("reservation", reservation);
 		return "newreservation/newreservationview";
