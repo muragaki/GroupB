@@ -31,13 +31,14 @@ public class TwoGuestController {
 
 	@GetMapping("one")
 	String reservation1(@ModelAttribute GuestEditForm guestEditForm, Model model) {
-		guestEditForm.setAddressList(new ArrayList<Address>(Arrays.asList(Address.Hokkaido,Address.Aomori,Address.Iwate,Address.Miyagi,Address.Akita,Address.Yamagata,Address.Hukushima,Address.Ibaraki,Address.Tochigi,Address.Gunma,Address.Saitama,Address.Chiba,Address.Tokyo,Address.Kanagawa,Address.Niigata,Address.Toyama,Address.Ishikawa,Address.Fukui,Address.Yamanashi,Address.Nagano,Address.Gihu,Address.Shizuoka,Address.Aichi,Address.Mie,Address.Shiga,Address.Kyoto,Address.Osaka,Address.Hyogo,Address.Nara,Address.Wakayama,Address.Tottori,Address.Shimane,Address.Okayama,Address.Hiroshima,Address.Yamaguchi,Address.Tokushima,Address.Kagawa,Address.Ehime,Address.Kochi,Address.Fukuoka,Address.Saga,Address.Nagasaki,Address.Kumamoto,Address.Oita,Address.Miyazaki,Address.Kagoshima,Address.Okinawa)));
+		guestEditForm.setAddressList(new ArrayList<Address>(Arrays.asList(Address.Hokkaido,Address.Aomori,Address.Iwate,Address.Miyagi,Address.Akita,Address.Yamagata,Address.Fukushima,Address.Ibaraki,Address.Tochigi,Address.Gunma,Address.Saitama,Address.Chiba,Address.Tokyo,Address.Kanagawa,Address.Niigata,Address.Toyama,Address.Ishikawa,Address.Fukui,Address.Yamanashi,Address.Nagano,Address.Gihu,Address.Shizuoka,Address.Aichi,Address.Mie,Address.Shiga,Address.Kyoto,Address.Osaka,Address.Hyogo,Address.Nara,Address.Wakayama,Address.Tottori,Address.Shimane,Address.Okayama,Address.Hiroshima,Address.Yamaguchi,Address.Tokushima,Address.Kagawa,Address.Ehime,Address.Kochi,Address.Fukuoka,Address.Saga,Address.Nagasaki,Address.Kumamoto,Address.Oita,Address.Miyazaki,Address.Kagoshima,Address.Okinawa)));
 		model.addAttribute("guestEditForm", guestEditForm);
 		return "twoguest/oneview";
 	}
 
 	@PostMapping("guestsave")
-	String guestsave() {
-		return "guestsave/guestsave";
+	String guestsave(GuestEditForm guestEditForm,Model model) {
+		twoguestService.save(guestEditForm);
+		return "twoguest/guestsave";
 	}
 }

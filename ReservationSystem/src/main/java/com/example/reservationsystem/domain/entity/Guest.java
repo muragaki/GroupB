@@ -3,6 +3,7 @@ package com.example.reservationsystem.domain.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -25,6 +26,7 @@ private String firstname;
 private String lastname;
 private LocalDate dateofbirth;
 @Enumerated(EnumType.STRING)
+@Column(nullable = true)
 private Address address;
 private String phonenumber;
 private String mailaddress;

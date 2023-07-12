@@ -10,6 +10,10 @@
 	<form th:action="@{/guestsave}" method="post" th:object="${guestEditForm}">
 		<table border="1">
 			<tr>
+				<td><label>お客様ID</label></td>
+				<td><input type="text" name="guestcode" th:value="*{guestcode}" /></td>
+			</tr>
+			<tr>
 				<td><label>First Name</label></td>
 				<td><input type="text" name="firstname" th:value="*{firstname}" /></td>
 			</tr>
@@ -26,10 +30,14 @@
 				<td><input type="text" name="mailaddress" th:value="*{mailaddress}" /></td>
 			</tr>
 			<tr>
+				<td><label>誕生日</label></td>
+				<td><input type="date" name="dateofbirth" th:value="*{dateofbirth}" /></td>
+			</tr>
+			<tr>
 				<td>住所</td>
 				<td>
 				<select name="address" th:field="${guestEditForm.address}">
-					<option th:each="address:*{addressList}" th:value="${address.value}" th:text="${address.text}">
+					<option th:each="address:${guestEditForm.addressList}" th:value="${address.value}" th:text="${address.text}">
 					</option>
 				</select>
 				<input type="hidden" th:field="${guestEditForm.addressList}" />
@@ -38,8 +46,8 @@
 		</table>
 		<input type="submit" value="新規登録" />
 
-		<a th:href="@{/guestForm}">戻る</a>
 	</form>
+		<a th:href="@{/guestForm}">戻る</a>
 
 </body>
 
