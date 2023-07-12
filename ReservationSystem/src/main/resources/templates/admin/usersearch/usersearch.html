@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ユーザー一覧画面</title>
+</head>
+<body>
+<table border="1" th:object="${UserForm}">
+		<tr>
+			<th>ユーザーID</th>
+			<th>性(Last Name)</th>
+			<th>名(First Name)</th>
+			<th>役職</th>
+		</tr>
+		<tr th:each="usersearch : *{userList}" align="center">
+		<form action="@{/admin/signup}" method="get" th:object="${user}">
+			<td th:text="${usersearch.userId}"></td>
+			<td th:text="${usersearch.lastName}"></td>
+			<td th:text="${usersearch.firstName}"></td>
+			<td th:text="${usersearch.roleName}"></td>
+			<td><input type="submit" value="編集" /></td>
+			</form>
+		</tr>
+	</table>
+		<a th:href="@{/admin/signup}">新規ユーザー登録</a>
+		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
+</body>
+</html>

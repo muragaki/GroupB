@@ -37,8 +37,14 @@ public class TwoGuestController {
 	}
 
 	@PostMapping("guestsave")
+<<<<<<< HEAD
 	String guestsave(GuestEditForm guestEditForm,Model model) {
 		twoguestService.save(guestEditForm);
 		return "twoguest/guestsave";
+=======
+	String guestsave(@RequestParam("guest")Guest guest, Model model) {
+		twoguestService.save(guest);
+		return "guestsave/guestsave";
+>>>>>>> branch 'master' of https://github.com/muragaki/GroupB.git
 	}
 }
