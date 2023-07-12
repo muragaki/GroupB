@@ -1,4 +1,4 @@
-package com.example.reservationsystem.domain.entity.imgpicture;
+/*package com.example.reservationsystem.domain.entity.imgpicture;
 
 import org.springframework.data.annotation.Id;
 
@@ -26,3 +26,4 @@ private String img5;
 	
 
 }
+*/
