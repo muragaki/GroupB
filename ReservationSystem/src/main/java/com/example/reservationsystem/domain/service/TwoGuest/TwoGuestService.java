@@ -16,5 +16,8 @@ public class TwoGuestService {
 	public Guest findOne(String guestcode) {
 		return guestRepository.findByGuestcode(guestcode);
 	}
+	public void save(Guest guest) {
+		guestRepository.save(guest);
 
+	}
 }

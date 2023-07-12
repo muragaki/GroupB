@@ -1,8 +1,10 @@
 package com.example.reservationsystem.app.form.user;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.reservationsystem.domain.entity.RoleName;
+import com.example.reservationsystem.domain.entity.User;
 
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -28,5 +30,8 @@ import lombok.NoArgsConstructor;
 //		@Size(min=4, max=5)
 		private RoleName rolename;
 		private List<RoleName> roleNameList;
+		
+	//kuwa 追記(2023/7/12)
+		ArrayList<User>userList = new ArrayList<>();
 	}
 
