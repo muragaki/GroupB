@@ -9,6 +9,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,10 +42,15 @@ import lombok.NoArgsConstructor;
 		@JoinColumn(name="plancode", insertable=false, updatable=false)
 		private Planinformation plan;
 		
+		@NotNull
+		@Future
 		private LocalDate arrday;
-		
+		@NotNull
+		@Future
 		private LocalDate depday;
-		
+		@NotNull
+		@Min(1)
+		@Max(50)
 		private Integer persons;
 		
 		private String roomnumber;
