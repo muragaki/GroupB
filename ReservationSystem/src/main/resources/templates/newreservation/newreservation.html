@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<Form th:action="@{/reservationsave}" method="post" th:object="${reservation}">
+		<th:text="*{guest}">お客様ID</label>
+<!--		<input type="text" name="" th:value="${signupForm.username}">-->
+<!--		<label>お客様ID　　　：</label>-->
+<!--		<input type="text" name="" th:value="${signupForm.username}">-->
+		
+	</Form>
+
+</body>
+</html>

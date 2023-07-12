@@ -19,17 +19,18 @@
 		
 		<tr th:each="guest: *{guestList}" align="center">
 			<form th:action="@{/twoguest}" method="get">
-			<td th:text="${guest.guestcode}"></td>
+			<td th:text="${guest.firstname}"></td>
 			<td th:text="${guest.lastname}"></td>
 			<td th:text="${guest.phonenumber}"></td>
 			<td th:text="${guest.mailaddress}"></td>
-			<td th:text="${guest.mailaddress}"></td>
+			<td th:text="${guest.address}"></td>
 			<td><input type="submit" value="詳細" /></td>
 				<input type="hidden" name="guest" th:value="${guest.guestcode}" />
 			</form>
-			<td><a th:href="@{/newreservationview}">新規予約</a></td>
+			<td><form th:action="@{/newreservationview}" method="get">
+			<input type="submit" value="予約作成" />
 				<input type="hidden" name="guest" th:value="${guest.guestcode}" />
-		</tr>
+				</form></td>
 	</table>
 	<a th:href="@{/one}">新規登録を行う</a>
 		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>

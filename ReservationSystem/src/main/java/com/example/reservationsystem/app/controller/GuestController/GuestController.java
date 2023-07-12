@@ -19,12 +19,12 @@ public class GuestController {
 	GuestService guestRe;
 	@GetMapping("guestForm")
 	
-	String guestForm(@ModelAttribute Guest guest,@ModelAttribute GuestForm guestForm, Model model) {
+	String guestForm(@ModelAttribute GuestForm guestForm, Model model) {
 		guestForm.setGuestList( (ArrayList<Guest>) guestRe.readAll());
-		model.addAttribute("guest",guest);
 		model.addAttribute("guestForm",guestForm);
 		return "guest/guestForm";
 	}
+	
 	
 	
 
