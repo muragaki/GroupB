@@ -19,7 +19,11 @@ public class Planinformation {
 	@Id
 	private String plancode;
 	private String planname;
-
+    private String jpgname;
+    @ManyToOne
+	@JoinColumn(name = "jpgname", insertable = false, updatable = false)
+    private Jpg jpg;
+    
 	private String roomnumber;
 	@ManyToOne
 	@JoinColumn(name = "roomnumber", insertable = false, updatable = false)

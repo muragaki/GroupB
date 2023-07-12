@@ -6,6 +6,56 @@
 </head>
 <body>
 	
+	   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yakei1.jpg" alt="夜景" title="ホテルからの夜景">
+		
+		
+		<form th:action="@{/endreservation}" method="post" th:object="${reservation}">
+		<table border="1">
+			<tr><td><label><b>プラン</b></label></td>
+<!--				<td><b>プラン</b></td>-->
+				<td th:text="${plan.planname}"></td>
+			</tr>	
+			<tr>
+				
+				<td><label><b>宿泊人数</b></label></td>
+				<td><input type="text" name="persons" th:value="*{persons}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>チェックイン</b></label></td>
+				<td><input type="date" name="arrday" th:value="*{arrday}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>チェックアウト</b></label></td>
+				<td><input type="date" name="depday" th:value="*{depday}" /></td>
+			</tr>
+			<tr>
+				<td><label>苗字</label></td>
+				<td><input type="text"name="firstname" th:value="*{guest.firstname}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>名前</b></label></td>
+				<td><input type="text" name="lastname" th:value="*{guest.lastname}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>誕生日</b></label></td>
+				<td><input type="text" name="dateofbirth" th:value="*{guest.dateofbirth}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>電話番号</b></label></td>
+				<td><input type="text" name="phonenumbe" th:value="*{guest.phonenumbe}" /></td>
+			</tr>
+		     <tr>
+				<td><label><b>住所</b></label></td>
+				<td><input type="text" name="address" th:value="*{guest.address}" /></td>
+			</tr>
+			<tr>
+				<td><label><b>メールアドレス</b></label></td>
+				<td><input type="text" name="mailaddress" th:value="*{guest.mailaddress}" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="予約" />
+	</form>
+
 	
 
 </body>

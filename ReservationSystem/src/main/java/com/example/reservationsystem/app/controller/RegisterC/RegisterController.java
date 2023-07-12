@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.reservationsystem.domain.entity.Reservation;
 import com.example.reservationsystem.domain.service.RegisterS.RegisterService;
@@ -16,12 +16,12 @@ import com.example.reservationsystem.domain.service.RegisterS.RegisterService;
 public class RegisterController {
 @Autowired
 RegisterService registerservice ;
-@GetMapping("register")
+@PostMapping("register")
 
 String register(@ModelAttribute String register , Model model) {
 	ArrayList<Reservation>register1 =new ArrayList<Reservation>();
 	register1=registerservice.register();
-	model.addAttribute("register",register1);
+	model.addAttribute("reservation",register1);
 	return "register/registerview";
 }
 }
