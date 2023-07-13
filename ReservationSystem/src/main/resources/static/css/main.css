@@ -1,8 +1,9 @@
 @charset "UTF-8";
 body{
 	text-align: center;
-	
-	background-color: rgb(0, 128, 255);
+	background-image: url("/img/imgpicture/dad3.jpg");
+	background-position: center center;
+/*	background-color: rgb(0, 128, 255);*/
 	
 }
 

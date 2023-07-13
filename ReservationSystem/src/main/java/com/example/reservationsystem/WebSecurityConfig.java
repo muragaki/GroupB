@@ -39,6 +39,7 @@ public class WebSecurityConfig {
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 				.requestMatchers("/","/planlist","/register").permitAll()
 				.requestMatchers("/mainmenu").permitAll()
+				.requestMatchers("/img/imgpicture/**").permitAll()
 				.requestMatchers("/admin/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
 		);
