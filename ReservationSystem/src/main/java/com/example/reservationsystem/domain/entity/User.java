@@ -25,7 +25,7 @@ public class User {
 	@Id
 	private String userId;
 	@NotEmpty
-	@Length(min=8,max=16)
+	@Length(min=6,max=8)
 	private String password;
 	@NotEmpty
 	private String firstName;
