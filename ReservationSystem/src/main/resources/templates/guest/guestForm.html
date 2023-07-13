@@ -14,7 +14,7 @@
 			<th>名(First Name)</th>
 			<th>電話番号</th>
 			<th>E-mail</th>
-			<th>アドレス</th>
+			<th>住所</th>
 		</tr>
 		
 		<tr th:each="guest: *{guestList}" align="center">
@@ -23,7 +23,7 @@
 			<td th:text="${guest.lastname}"></td>
 			<td th:text="${guest.phonenumber}"></td>
 			<td th:text="${guest.mailaddress}"></td>
-			<td th:text="${guest.address}"></td>
+			<td th:text="${guest.address.text}"></td>
 			<td><input type="submit" value="詳細" /></td>
 				<input type="hidden" name="guest" th:value="${guest.guestcode}" />
 			</form>

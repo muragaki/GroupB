@@ -1,7 +1,5 @@
 package com.example.reservationsystem.domain.entity;
 
-import org.hibernate.validator.constraints.Length;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -25,7 +23,6 @@ public class User {
 	@Id
 	private String userId;
 	@NotEmpty
-	@Length(min=6,max=8)
 	private String password;
 	@NotEmpty
 	private String firstName;

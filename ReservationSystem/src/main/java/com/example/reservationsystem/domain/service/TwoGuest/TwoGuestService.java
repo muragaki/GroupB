@@ -3,6 +3,7 @@ package com.example.reservationsystem.domain.service.TwoGuest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.reservationsystem.app.form.Guest.GuestEditForm;
 import com.example.reservationsystem.domain.entity.Guest;
 import com.example.reservationsystem.domain.repository.Guest.GuestRepository;
 
@@ -17,7 +18,7 @@ public class TwoGuestService {
 		return guestRepository.findByGuestcode(guestcode);
 	}
 	
-	/*	public void save(GuestEditForm guestEditForm) {
+		public void save(GuestEditForm guestEditForm) {
 			Guest guest = new Guest(
 					guestEditForm.getGuestcode(),
 					guestEditForm.getFirstname(),
@@ -28,7 +29,7 @@ public class TwoGuestService {
 					guestEditForm.getMailaddress()
 					);
 			guestRepository.save(guest);
-		}*/
+		}
 	public void save(Guest guest) {
 		guestRepository.save(guest);
 

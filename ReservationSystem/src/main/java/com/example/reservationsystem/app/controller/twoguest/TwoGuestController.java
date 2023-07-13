@@ -38,7 +38,7 @@ public class TwoGuestController {
 
 	@PostMapping("guestsave")
 	String guestsave(GuestEditForm guestEditForm,Model model) {
-	//	twoguestService.save(guestEditForm);
+		twoguestService.save(guestEditForm);
 		return "twoguest/guestsave";
 	}
 }
