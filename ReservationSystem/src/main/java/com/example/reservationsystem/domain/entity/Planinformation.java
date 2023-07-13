@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Planinformation {
 	@Id
 	private String plancode;
-	@NotNull
+	@NotEmpty
 	private String planname;
     private String jpgname;
     @ManyToOne
@@ -30,7 +30,7 @@ public class Planinformation {
 	@ManyToOne
 	@JoinColumn(name = "roomnumber", insertable = false, updatable = false)
 	private RoomInformation room;
-
+	
 	private String remarks;
 
 }
