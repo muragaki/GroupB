@@ -5,12 +5,43 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<Form th:action="@{/reservationsave}" method="post" th:object="${reservation}">
-		<th:text="*{guest}">お客様ID</label>
-<!--		<input type="text" name="" th:value="${signupForm.username}">-->
-<!--		<label>お客様ID　　　：</label>-->
-<!--		<input type="text" name="" th:value="${signupForm.username}">-->
+	<form th:action="@{/reservationsave}" method="post" th:object="${reservationEditForm}">
+		<p th:text="*{guestcode}">お客様ID</p>
+		<input type="hidden" th:field="*{guestcode}">
+		<p th:text="*{firstname}">性　　　　</p>
+		<input type="hidden" th:field="*{firstname}">
+		<p th:text="*{lastname}">名　　　　</p>
+		<input type="hidden" th:field="*{lastname}">
+		<p th:text="*{dateofbirth}">生年月日　</p>
+		<input type="hidden" th:field="*{dateofbirth}">
+
+		<p>住所</p>
+				<select name="address" th:field="*{address}">
+					<option th:each="address:*{addressList}" th:value="${address.value}" th:text="${address.text}">
+					</option>
+				</select>
+				<input type="hidden" th:field="${reservationEditForm.addressList}" />
+				<br>
+		<label>電話番号　：</label>
+		<input type="text" th:field="*{phonenumber}">
+				<br>
+		<label>Email　：</label>
+		<input type="text" th:field="*{mailaddress}">
+				<br>
+		<label>到着日　：</label>
+		<input type="date" th:field="*{arrday}">
+				<br>
+		<label>出発日　：</label>
+		<input type="date" th:field="*{depday}">
+				<br>
+		<label>宿泊人数　：</label>
+		<input type="text" th:field="*{persons}">
 		
+				<select th:name="plan"  th:field="${reservationEditForm.plan.planCode}" >
+					<option th:each="planedit:${reservationEditForm.planList}" th:value="${planedit.planCode}"th:text="${planedit.planName}"th:selected="${planedit.planCode} == *{plan}" >
+					</option>
+				</select>
+		<button>登録</button>
 	</Form>
 
 </body>
