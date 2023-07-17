@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body{
+	text-align: center;
+};
+
+.a{
+text-align: center;
+}
+
+.regist{
+	  font-size: 20pt;
+  display: inline-block;
+  padding: 0.8em 3em;
+  background-color: #61b0e2; /* 背景色 */
+  box-shadow: 0 5px 0 #369ada; /* 影の太さ・色 */
+  border-radius: 60px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none; /* 文字の下線を消す */
+}

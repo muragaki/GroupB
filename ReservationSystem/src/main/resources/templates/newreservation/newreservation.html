@@ -2,47 +2,73 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>新規予約画面</title>
+<link th:href="@{/css/newreservation.css}" rel="styleSheet">
 </head>
 <body>
-	<form th:action="@{/reservationsave}" method="post" th:object="${reservationEditForm}">
-		<p th:text="*{guestcode}">お客様ID</p>
-		<input type="hidden" th:field="*{guestcode}">
-		<p th:text="*{firstname}">性　　　　</p>
-		<input type="hidden" th:field="*{firstname}">
-		<p th:text="*{lastname}">名　　　　</p>
-		<input type="hidden" th:field="*{lastname}">
-		<p th:text="*{dateofbirth}">生年月日　</p>
-		<input type="hidden" th:field="*{dateofbirth}">
-
-		<p>住所</p>
-				<select name="address" th:field="*{address}">
-					<option th:each="address:*{addressList}" th:value="${address.value}" th:text="${address.text}">
-					</option>
-				</select>
-				<input type="hidden" th:field="${reservationEditForm.addressList}" />
-				<br>
-		<label>電話番号　：</label>
-		<input type="text" th:field="*{phonenumber}">
-				<br>
-		<label>Email　：</label>
-		<input type="text" th:field="*{mailaddress}">
-				<br>
-		<label>到着日　：</label>
-		<input type="date" th:field="*{arrday}">
-				<br>
-		<label>出発日　：</label>
-		<input type="date" th:field="*{depday}">
-				<br>
-		<label>宿泊人数　：</label>
-		<input type="text" th:field="*{persons}">
-		
-				<select th:name="plan"  th:field="${reservationEditForm.plan.planCode}" >
+	<h1><p>新規予約画面</p></h1>
+	<table align="center">
+	<form th:action="@{/reservationsave}" method="post" th:object="${reservationEditForm}" align="center">
+		<tr>
+		<td><label>お客様ID　：</label></td>
+		<td><input type="hidden" th:text="*{guestcode}" th:field="*{guestcode}" readonly></td>
+		</tr>
+		<tr>
+		<td><label>性　　　　：</label></td>
+			
+		<td><input type="hidden" th:text="*{firstname}" th:field="*{firstname}"readonly></td>
+		</tr>
+		<tr>
+			
+		<td><label>名　　　　：</label></td>
+		<td><input type="hidden" th:text="*{lastname}" th:field="*{lastname}"readonly></td>
+		</tr>
+		<tr>
+		<td><label>生年月日　：</label></td>
+		<td><input type="hidden" th:text="*{dateofbirth}" th:field="*{dateofbirth}"readonly></td>
+		</tr>
+		<tr>
+		<td><label>住所　　　：</label></td>
+		<td><input type="hidden" th:text="*{address.text}" th:field="*{address}"readonly></td>
+		</tr>
+		<tr>
+		<td><label>電話番号　：</label></td>
+		<td><input type="hidden" th:text="*{phonenumber}" th:field="*{phonenumber}" readonly></td>
+		</tr>
+		<tr>
+		<td><label>Email 　　：</label></td>
+		<td><input type="hidden" th:text="*{mailaddress}" th:field="*{mailaddress}" readonly></td>
+		</tr>
+		<tr>
+		<td><label>到着日　　：</label></td>
+		<td><input type="date" th:field="*{arrday}"></td>
+		<td><span th:errors="*{arrday}" style="color:red"></span></td>
+		</tr>
+		<tr>
+		<td><label>出発日　　：</label></td>
+		<td><input type="date" th:field="*{depday}"></td>
+		<td><span th:errors="*{depday}" style="color:red"></span></td>
+		</tr>
+		<tr>
+		<td><label>宿泊人数　：</label></td>
+		<td><input type="number" th:field="*{persons}"></td>
+		<td><span th:errors="*{persons}" style="color:red"></span></td>
+		</tr>
+		<tr>
+		<td><textarea　readonly>プラン　　：</textarea></td>
+				<td><select th:name="plan"  th:field="${reservationEditForm.plan.planCode}" >
 					<option th:each="planedit:${reservationEditForm.planList}" th:value="${planedit.planCode}"th:text="${planedit.planName}"th:selected="${planedit.planCode} == *{plan}" >
 					</option>
-				</select>
-		<button>登録</button>
+				</select></td>
+		</tr>
+		<tr>
+			<td></td>
+		<td><br> <br><button class="regist">予約を登録する</button></td>
+		</tr>
 	</Form>
-
+	</table>
+			<br>
+			<br>
+<a th:href="@{/guestForm}">ゲスト一覧へ戻る</a>
 </body>
 </html>

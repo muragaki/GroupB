@@ -45,8 +45,8 @@ public ReservationEditForm setGuest(String guestcode) {
 	ReservationEditForm reservationEditForm = new ReservationEditForm();
 	reservationEditForm.setFirstname(guest.getFirstname());
 	reservationEditForm.setLastname(guest.getLastname());
-	reservationEditForm.setDateofbirth(guest.getDateofbirth());
 	reservationEditForm.setAddress(guest.getAddress());
+	reservationEditForm.setDateofbirth(guest.getDateofbirth());
 	reservationEditForm.setPhonenumber(guest.getPhonenumber());
 	reservationEditForm.setMailaddress(guest.getMailaddress());
 	return reservationEditForm;

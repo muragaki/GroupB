@@ -6,6 +6,8 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,9 +33,16 @@ public class NewReservationController {
 	}
 	
 	@PostMapping("reservationsave")
-	String reservationsave( ReservationEditForm reservationEditForm,Model model) {
+	String reservationsave( @Validated ReservationEditForm reservationEditForm, BindingResult bindingResult,Model model) {
+		//エラーがあれば、入力画面へ戻る
+		if(bindingResult.hasErrors()) {
+			reservationEditForm.setPlanList(newreservationservice.findCodeNameAll());
+			return "/newreservation/newreservation";
+		}
+		if(reservationEditForm.getDepday().isEqual(reservationEditForm.getArrday())) {
+			return"/newreservation/newreservation";
+		}
 		newreservationservice.save(reservationEditForm);
 		return "newreservation/reservationsave";
 	}
-	
 }
