@@ -15,12 +15,10 @@
   
  
 		<table border="1">
-<!--			<tr><td><label><b>プラン</b></label></td>-->
-<!--				<td><b>プラン</b></td>-->
-<!--				<td th:text="${plan.planname}"></td>-->
-<!--			</tr>	-->
+			<tr><td><label><b>プラン名</b></label></td>
+				<td><input type="text" name="plan" th:value="*{plan.planName}" readonly/></td>
+			</tr>	
 			<tr>
-				
 				<td><label><b>宿泊人数</b></label></td>
 				<td><input type="number" name="persons" th:value="*{persons}" /></td>
 			</tr>
@@ -46,7 +44,7 @@
 			</tr>
 			<tr>
 				<td><label><b>電話番号</b></label></td>
-				<td><input type="text" name="phonenumbe" th:value="*{phonenumbe}" /></td>
+				<td><input type="text" name="phonenumber" th:value="*{phonenumber}" /></td>
 			</tr>
 		     <tr>
 				<td><label><b>住所</b></label></td>
@@ -58,8 +56,8 @@
 			</tr>
 		</table>
 		<input type="submit" value="予約" />
+		<input type="hidden" name="plancode" th:value="${plan.planCode}">
 	</form>
-<!DOCTYPE html>
 <!--<html>-->
 <!--<head>-->
 <!--    <title>Registration View</title>-->

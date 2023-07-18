@@ -25,8 +25,8 @@
 				<td th:text="${plan.remarks}"></td>
 				
 				<td><input type="submit" value="予約" /></td>
-				
-                <td><input type="submit" value="詳細" /></td>
+				<input type="hidden" name="plancode" th:value="${plan.plancode}">
+                <td><a th:href="@{/}">写真</a></td>
 			</form>
 		</tr>
 	</table>
