@@ -10,6 +10,7 @@ import com.example.reservationsystem.domain.service.RoomInformationService.RoomI
 public class RoomInformationController {
 	@Autowired
 	RoomInformationService RoomInformationService ;
+	//部屋の検索画面を表示
 @GetMapping("roominformation")
 String room() {
 	return "roominformation/roominformationview";

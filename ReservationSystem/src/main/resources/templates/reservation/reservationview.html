@@ -25,6 +25,15 @@
 		<input type="submit" value="確認" />
 	</form>
 -->
+				<div>予約件数：[[${total}]]</div>
+	<Form th:action="@{/ressearch}" method="post">
+		<label>到着日：</label>
+		<input type="date" th:name="arrayday"th:value="${arrayday}" >
+		<label>出発日：</label>
+		<input type="date" th:name="depday"th:value="${depday}">
+		<button>検索</button>
+		<input type="hidden" th:field="${reservationForm}">
+	</Form>
 	
 	<table border="1" th:object="${reservationForm}">
 		<tr>
@@ -44,6 +53,7 @@
 				<input type="hidden" name="reservation" th:value="${reservation.resnumber}" />
 			</form>
 		</tr>
+		
 	</table>
 		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
 </body>

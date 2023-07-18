@@ -1,5 +1,7 @@
 package com.example.reservationsystem.domain.service.reservation;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,5 +29,22 @@ public ArrayList<Reservation> findResevation(ReservationForm form){
 		
 	}
 	return resList;
+}
+public ReservationForm searchReservation(ReservationForm reservationForm,LocalDate arrayday,LocalDate depday) {
+	ArrayList<Reservation> reservations = new ArrayList<>();
+	for(Reservation reservation:reservationForm.getReservationList()) {
+		if(reservation.getArrday().isEqual(arrayday)) {
+			reservations.add(reservation);
+		}
+		}
+	reservationForm.setReservationList(reservations);
+	return reservationForm;
+}
+
+//String型をLocalDateに変更するメソッド
+public  LocalDate convertToLocalDate(String date,String format) {
+    // シンプルにLocalDate型に変換された日付を返却
+return LocalDate.parse(date, DateTimeFormatter.ofPattern(format));
+
 }
 }
