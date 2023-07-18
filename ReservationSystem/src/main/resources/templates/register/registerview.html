@@ -7,19 +7,22 @@
 <body>
 	 
 	
-<!--	   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yakei1.jpg" alt="夜景" title="ホテルからの夜景">-->
+	   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yakei1.jpg" alt="夜景" title="ホテルからの夜景">
 		
 		
-		<form th:action="@{/endreservation}" method="post" th:object="${reservation}">
+		<form th:action="@{endreservation}" method="post" th:object="${register}">
+			
+  
+ 
 		<table border="1">
-			<tr><td><label><b>プラン</b></label></td>
+<!--			<tr><td><label><b>プラン</b></label></td>-->
 <!--				<td><b>プラン</b></td>-->
-				<td th:text="${plan.planname}"></td>
-			</tr>	
+<!--				<td th:text="${plan.planname}"></td>-->
+<!--			</tr>	-->
 			<tr>
 				
 				<td><label><b>宿泊人数</b></label></td>
-				<td><input type="text" name="persons" th:value="*{persons}" /></td>
+				<td><input type="number" name="persons" th:value="*{persons}" /></td>
 			</tr>
 			<tr>
 				<td><label><b>チェックイン</b></label></td>
@@ -31,31 +34,47 @@
 			</tr>
 			<tr>
 				<td><label>苗字</label></td>
-				<td><input type="text"name="firstname" th:value="*{guest.firstname}" /></td>
+				<td><input type="text"name="firstname" th:value="*{firstname}" /></td>
 			</tr>
 			<tr>
 				<td><label><b>名前</b></label></td>
-				<td><input type="text" name="lastname" th:value="*{guest.lastname}" /></td>
+				<td><input type="text" name="lastname" th:value="*{lastname}" /></td>
 			</tr>
 			<tr>
 				<td><label><b>誕生日</b></label></td>
-				<td><input type="text" name="dateofbirth" th:value="*{guest.dateofbirth}" /></td>
+				<td><input type="date" name="dateofbirth" th:value="*{dateofbirth}" /></td>
 			</tr>
 			<tr>
 				<td><label><b>電話番号</b></label></td>
-				<td><input type="text" name="phonenumbe" th:value="*{guest.phonenumbe}" /></td>
+				<td><input type="text" name="phonenumbe" th:value="*{phonenumbe}" /></td>
 			</tr>
 		     <tr>
 				<td><label><b>住所</b></label></td>
-				<td><input type="text" name="address" th:value="*{guest.address}" /></td>
+				<td><input type="text" name="address" th:value="*{address}" /></td>
 			</tr>
 			<tr>
 				<td><label><b>メールアドレス</b></label></td>
-				<td><input type="text" name="mailaddress" th:value="*{guest.mailaddress}" /></td>
+				<td><input type="text" name="mailaddress" th:value="*{mailaddress}" /></td>
 			</tr>
 		</table>
 		<input type="submit" value="予約" />
 	</form>
+<!DOCTYPE html>
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Registration View</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Registration Details</h1>-->
+<!--    <p>Guest Code: ${register.guestcode}</p>-->
+<!--    <p>Plan Code: ${register.plan.planCode}</p>-->
+<!--    <p>Plan Name: ${register.plan.planName}</p>-->
+<!--     他の情報があればここに表示する -->
+<!--</body>-->
+<!--</html>-->
+<!--15:08-->
+
+
 
 	
 

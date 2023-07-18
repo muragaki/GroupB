@@ -2,7 +2,7 @@ package com.example.reservationsystem.app.controller.EndReservationC;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.reservationsystem.domain.service.EndReservationS.EndReservationService;
 
@@ -10,7 +10,7 @@ import com.example.reservationsystem.domain.service.EndReservationS.EndReservati
 public class EndReservationContoller {
 	@Autowired
 	EndReservationService 	endreservationservice;
-	@GetMapping("endreservation")
+	@PostMapping("endreservation")
 	String endreservation() {
 		return "endreservation/endreservationview";
 	}

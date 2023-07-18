@@ -57,5 +57,8 @@ import lombok.NoArgsConstructor;
 		@ManyToOne
 		@JoinColumn(name="roomnumber", insertable=false, updatable=false)
 		private RoomInformation number;
+		
+			
 		}
+		
 		
