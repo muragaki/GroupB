@@ -8,7 +8,7 @@
 
 <body>
 	<form th:action="@{/guestsave}" method="post" th:object="${guestEditForm}">
-		<table border="1">
+		<table border="1" align="center">
 			<tr>
 				<td><label>お客様ID</label></td>
 				<td><input type="text" name="guestcode" th:value="*{guestcode}" /></td>
