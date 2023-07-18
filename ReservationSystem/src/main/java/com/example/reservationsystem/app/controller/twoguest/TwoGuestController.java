@@ -41,7 +41,7 @@ public class TwoGuestController {
 	@PostMapping("guestsave")
 	String guestsave(@Validated GuestEditForm guestEditForm,BindingResult bindingResult,Model model) {
 		if(bindingResult.hasErrors()) {
-			return "redirect:/twoguest/oneview";
+			return "/twoguest/oneview";
 		}
 		twoguestService.save(guestEditForm);
 		return "twoguest/guestsave";

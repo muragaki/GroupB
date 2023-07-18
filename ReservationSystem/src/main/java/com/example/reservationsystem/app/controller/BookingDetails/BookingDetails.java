@@ -18,6 +18,9 @@ public class BookingDetails {
 	@GetMapping("/bookingdetails")
 	String example(@RequestParam("reservation")Integer resnumber, Model model) {
 			Reservation reservation = bookingDetailsservice.findOne(resnumber);
+			if(reservation.getRoomnumber() == null) {
+				reservation.setRoomnumber("");
+			}
 		model.addAttribute("reservation",reservation);
 		return "bookingdetails/bookingdetailsview";
 	}

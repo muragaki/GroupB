@@ -23,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ReservationEditForm {
 	private String guestcode;
 	private String firstname;
