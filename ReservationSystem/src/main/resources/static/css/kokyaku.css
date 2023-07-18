@@ -1,0 +1,7 @@
+@charset "UTF-8";
+body{
+	text-align: center;
+	background-image: url("/img/imgpicture/yoru2.jpg");
+/*	background-position: center center*/
+}
+ a {color: white;}
