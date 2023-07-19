@@ -13,13 +13,21 @@
 			<th>役職</th>
 		</tr>
 		<tr th:each="usersearch : *{userList}" align="center">
-		<form action="@{/admin/signup}" method="get" th:object="${user}">
+		<form th:action="@{/admin/useredit}" method="get" >
 			<td th:text="${usersearch.userId}"></td>
 			<td th:text="${usersearch.lastName}"></td>
 			<td th:text="${usersearch.firstName}"></td>
 			<td th:text="${usersearch.roleName}"></td>
 			<td><input type="submit" value="編集" /></td>
+			<input type="hidden"th:name ="userId" th:value = "${usersearch.userId}">
+			<input type="hidden"th:name ="lastName" th:value = "${usersearch.lastName}">
+			<input type="hidden"th:name ="firstName" th:value = "${usersearch.firstName}">
+			<input type="hidden"th:name ="roleName" th:value = "${usersearch.roleName}">
+			<input type="hidden"th:name ="password" th:value = "${usersearch.password}">
 			</form>
+			<form th:action="@{/admin/deleteuser}" method="get" >
+			<td><input type="submit" value="削除" /></td>
+		</form>
 		</tr>
 	</table>
 		<a th:href="@{/admin/signup}">新規ユーザー登録</a>
