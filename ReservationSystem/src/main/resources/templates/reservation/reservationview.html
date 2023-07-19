@@ -4,27 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Reserve Search</title>
+	<link th:href="@{/css/yoyaku.css}" rel="styleSheet">
 </head>
 
 <body>
-<!--	<form th:action="@{/result}" method="post" th:object="${reservation}">
-		<table border="1">
-			<tr>
-				<td><label>FirstName</label></td>
-				<td><input type="text" name="*{guest.firstname}" /></td>
-			</tr>
-			<tr>
-				<td><label><b>FirstName</b></label></td>
-				<td><input type="text" name="*{guest.firstname}" /></td>
-			</tr>
-			<tr>
-				<td><label><b>LastName</b></label></td>
-				<td><input type="text" name="*{guest.lastname}" /></td>
-			</tr>
-		</table>
-		<input type="submit" value="確認" />
-	</form>
--->
 				<div>予約件数：[[${total}]]</div>
 	<Form th:action="@{/ressearch}" method="post">
 		<label>到着日：</label>
@@ -35,7 +18,7 @@
 		<input type="hidden" th:field="${reservationForm}">
 	</Form>
 	
-	<table border="1" th:object="${reservationForm}">
+	<table style="margin: 0 auto;" border="1" th:object="${reservationForm}">
 		<tr>
 			<th>姓(Last Name)</th>
 			<th>名(First Name)</th>
@@ -56,6 +39,21 @@
 		
 	</table>
 		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<img th:src="@{./img/imgpicture/puff.gif}" alt="new jeans" align="center">
 </body>
 
 </html>

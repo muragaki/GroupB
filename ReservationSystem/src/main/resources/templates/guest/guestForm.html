@@ -4,11 +4,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Guest Form</title>
-	<link th:href="@{Main.css}" rel="styleSheeet">
+	<link th:href="@{/css/kokyaku.css}" rel="styleSheet">
+	<style>
+		table {
+			color: white;
+		}
+	</style>
 </head>
 
 <body>
-	<table border="1" th:object="${guestForm}">
+	<table style="margin: 0 auto;" border="1" th:object="${guestForm}">
+		<br>
+		<br>
+		<br>
+		<br>
 		<tr>
 			<th>姓(Last Name)</th>
 			<th>名(First Name)</th>
