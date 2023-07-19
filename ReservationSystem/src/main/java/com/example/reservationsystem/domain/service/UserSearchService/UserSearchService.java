@@ -21,4 +21,7 @@ public ArrayList<User> readAll(){
 	return username;
 	
 }
+public void deleteUser(User userform) {
+	userrepository.delete(userform);
+}
 }

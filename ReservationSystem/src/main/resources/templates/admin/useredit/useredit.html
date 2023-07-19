@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ユーザー編集画面</title>
+</head>
+<body>
+ <h1>ユーザー編集</h1>
+
+   <table>
+        <tr>
+            <th>ユーザーID</th>
+            <td th:text="${user.userId}"></td>
+        </tr>
+        <tr>
+            <th>性(Last Name)</th>
+            <td><input type="text" th:value="${user.lastName}" /></td>
+        </tr>
+        <tr>
+            <th>名(First Name)</th>
+            <td><input type="text" th:value="${user.firstName}" /></td>
+        </tr>
+        <tr>
+            <th>役職</th>
+           <td th:text="${user.roleName}"></td>
+        </tr>
+        <tr>
+            <th>パスワード</th>
+            <td><input type="password" th:value="${user.password}" /></td>
+        </tr>
+        <td><input type="submit" value="変更(未実装)" /></td>
+    </table>
+
+
+    <a th:href="@{/admin/usersearch}">ユーザー一覧に戻る</a>
+</body>
+</html>
