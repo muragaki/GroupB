@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<form action="@{/reservation}" method="get" th:object="${reservation}">
+	<form th:action="@{/bookingdetails}" method="post" th:object="${reservation}">
 		<table border="1">
 			<tr>
 				<th align="center"	><p>性</p></th>
@@ -19,6 +19,7 @@
 			<tr>
 				<th><p>予約番号　</p></th>
 				<td th:text="*{resnumber}"></td>
+			<input type="hidden" th:field="${reservation.resnumber}">	
 			</tr>
 			<tr>
 				<th><p>到着日　</p></th>
@@ -37,14 +38,23 @@
 				<td th:text="*{guest.phonenumber}"></td>
 			</tr>
 			<tr >
-				<th><p>部屋番号　</p></th>
-				<td th:text="*{roomnumber}"></td>
+				<th><p>部屋タイプ</p></th>
+				<td>
+				<select name="room" th:field="*{roomnumber}">
+					<option th:each="room:${roomList}" th:value="*{roomnumber}" th:text="${room.roomname}">
+					</option>
+				<input type="hidden" th:value="${room}" >
+				</select>
+				</td>
 			</tr>
 			<tr>
 				<th><p>予約人数　</p></th>
 				<td th:text="*{persons}"></td>
 			</tr>
-			
+			<tr>
+<!--			<td><button>部屋タイプを変更する</button></td>-->
+		
+				</tr>
 		</table>
 
 	</form>

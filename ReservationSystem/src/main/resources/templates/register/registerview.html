@@ -20,43 +20,43 @@
 			</tr>	
 			<tr>
 				<td><label><b>宿泊人数</b></label></td>
-				<td><input type="number" name="persons" th:value="*{persons}" /></td>
+				<td><input type="number" name="persons" th:value="*{persons}" min="1" max="4" required/></td>
 				<td><span th:errors="*{persons}" style="color:red"></span></td>
 				
 			</tr>
 			<tr>
 				<td><label><b>チェックイン</b></label></td>
-				<td><input type="date" name="arrday" th:value="*{arrday}" /></td>
+				<td><input type="date" name="arrday" th:value="*{arrday}" required/></td>
 				<td><span th:errors="*{arrday}" style="color:red"></span></td>
 			</tr>
 			<tr>
 				<td><label><b>チェックアウト</b></label></td>
-				<td><input type="date" name="depday" th:value="*{depday}" /></td>
+				<td><input type="date" name="depday" th:value="*{depday}" required/></td>
 				<td><span th:errors="*{depday}" style="color:red"></span></td>
 			</tr>
 			<tr>
 				<td><label><b>お客様ID</b></label></td>
-				<td><input type="text" th:name="guestcode" th:value="*{guestcode}" /></td>
+				<td><input type="text" th:name="guestcode" th:value="*{guestcode}" required/></td>
 				<td><span th:errors="*{guestcode}" style="color:red"></span></td>
 			</tr>
 			<tr>
 				<td><label><b>苗字</b></label></td>
-				<td><input type="text" th:name="firstname" th:value="*{firstname}" /></td>
+				<td><input type="text" th:name="firstname" th:value="*{firstname}" required/></td>
 				<td><span th:errors="*{firstname}" style="color:red"></span></td>
 			</tr>
 			<tr>
 				<td><label><b>名前</b></label></td>
-				<td><input type="text" th:name="lastname" th:value="*{lastname}" /></td>
+				<td><input type="text" th:name="lastname" th:value="*{lastname}" required/></td>
 				<td><span th:errors="*{lastname}" style="color:red"></span></td>
 			</tr>
 			<tr>
 				<td><label><b>誕生日</b></label></td>
-				<td><input type="date" name="dateofbirth" th:value="*{dateofbirth}" /></td>
+				<td><input type="date" name="dateofbirth" th:value="*{dateofbirth}" required/></td>
 				<td><span th:errors="*{dateofbirth}" style="color:red"></span></td>
 			</tr>
 			<tr>
-				<td><label><b>電話番号</b></label></td>
-				<td><input type="text" name="phonenumber" th:value="*{phonenumber}" /></td>
+				<td><label><b> 電話番号(ハイフンなし)</b></label></td>
+				<td><input type="tel" pattern="[\d]{10,}" name="phonenumber" th:value="*{phonenumber}" required/></td>
 				<td><span th:errors="*{phonenumber}" style="color:red"></span></td>
 			</tr>
 		     <tr>
@@ -73,7 +73,7 @@
 			</tr>
 			<tr>
 				<td><label><b>メールアドレス</b></label></td>
-				<td><input type="text" name="mailaddress" th:value="*{mailaddress}" /></td>
+				<td><input type="email" name="mailaddress" th:value="*{mailaddress}" required/></td>
 				<td><span th:errors="*{mailaddress}" style="color:red"></span></td>
 			</tr>
 		</table>
