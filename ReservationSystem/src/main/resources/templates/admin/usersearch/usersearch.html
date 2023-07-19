@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザー一覧画面</title>
+<link th:href="@{/css/flatbutton.css}" rel="styleSheet">
 </head>
 <body>
 <table border="1" th:object="${UserForm}">
@@ -30,7 +31,8 @@
 		</form>
 		</tr>
 	</table>
-		<a th:href="@{/admin/signup}">新規ユーザー登録</a>
+	<a th:href="@{/admin/signup}" class="btn btn-flat"><span>新規ユーザー登録</span></a>
+<!--		<a th:href="@{/admin/signup}">新規ユーザー登録</a>-->
 		<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
 </body>
 </html>
