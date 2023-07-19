@@ -33,7 +33,7 @@ public ArrayList<Reservation> findResevation(ReservationForm form){
 public ReservationForm searchReservation(ReservationForm reservationForm,LocalDate arrayday,LocalDate depday) {
 	ArrayList<Reservation> reservations = new ArrayList<>();
 	for(Reservation reservation:reservationForm.getReservationList()) {
-		if(reservation.getArrday().isEqual(arrayday)) {
+		if((reservation.getArrday().isEqual(arrayday)||reservation.getArrday().isAfter(arrayday)&&(reservation.getDepday().isEqual(depday)||reservation.getDepday().isBefore(depday)))) {
 			reservations.add(reservation);
 		}
 		}

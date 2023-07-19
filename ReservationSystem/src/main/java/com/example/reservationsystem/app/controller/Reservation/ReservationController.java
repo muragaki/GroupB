@@ -35,9 +35,14 @@ public class ReservationController {
 	}
 	
 	@PostMapping("/ressearch")
-	String datesearch(ReservationForm reservationForm,String arrayday, String depday,Model model){
+	String datesearch( ReservationForm reservationForm,String arrayday, String depday,Model model){
+		if(arrayday.isEmpty()||depday.isEmpty()) {
+			return "reservation/reservationview";
+		}
 		reservationForm.setReservationList( (ArrayList<Reservation>) reservationService.readAll());
 		reservationForm.setReservationList(reservationService.searchReservation(reservationForm, reservationService.convertToLocalDate(arrayday, "yyyy-MM-dd"), reservationService.convertToLocalDate(depday, "yyyy-MM-dd")).getReservationList());
+		Integer total = reservationForm.getReservationList().size();
+		model.addAttribute("total", total);
 		model.addAttribute("arrayday",arrayday);
 		model.addAttribute("depday",depday);
 		return"reservation/reservationview";
