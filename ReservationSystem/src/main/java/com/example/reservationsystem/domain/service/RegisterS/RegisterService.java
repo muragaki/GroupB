@@ -12,6 +12,7 @@ import com.example.reservationsystem.domain.entity.Reservation;
 import com.example.reservationsystem.domain.repository.Guest.GuestRepository;
 import com.example.reservationsystem.domain.repository.Planinfomation.PlaninfomationRepository;
 import com.example.reservationsystem.domain.repository.Reservation.ReservationRepository;
+
 @Service
 public class RegisterService {
 	@Autowired
@@ -20,41 +21,35 @@ public class RegisterService {
 	GuestRepository guestRepository;
 	@Autowired
 	PlaninfomationRepository planinformationRepository;
-	
-	
+	/**
+	 * プラン情報を取得する
+	 * @param plancode
+	 * @return プラン情報
+	 */
 	public Planinformation findByPlancode(String plancode) {
-		
+
 		return planinformationRepository.findByPlancode(plancode);
-		
+
 	}
-	
-	public ArrayList<Reservation>register() {
+
+	/**
+	 * 予約情報の一覧情報を取得する
+	 * @return予約一覧
+	 */
+	public ArrayList<Reservation> register() {
 		reservationRepository.findAll();
-		ArrayList<Reservation>register=new ArrayList<Reservation>();
-		register=(ArrayList<Reservation>)reservationRepository.findAll();
-		
+		ArrayList<Reservation> register = new ArrayList<Reservation>();
+		register = (ArrayList<Reservation>) reservationRepository.findAll();
+
 		return register;
 
-}
-	//フォームをもらってデータベースに保存するメソッド
-	public void save(ReservationEditForm reservationEditForm) {
-//		お客さん用の場合復活
-		  guestRepository.save(new Guest(reservationEditForm.getGuestcode(),reservationEditForm.getFirstname(),
-				reservationEditForm.getLastname(),reservationEditForm.getDateofbirth(),reservationEditForm.getAddress(),
-				reservationEditForm.getPhonenumber(),reservationEditForm.getMailaddress()));
-		
-		Reservation reservation = new Reservation();
-		reservation.setGuestcode(reservationEditForm.getGuestcode());
-		reservation.setPlancode(reservationEditForm.getPlan().getPlanCode());
-		reservation.setArrday(reservationEditForm.getArrday());
-		reservation.setDepday(reservationEditForm.getDepday());
-		reservation. setPersons(reservationEditForm.getPersons());
-		reservationRepository.save(reservation);
 	}
+
+	
 
 	//フォームにゲスト情報をセットする
 	public ReservationEditForm setGuest(String guestcode) {
-		Guest guest =guestRepository.findByGuestcode(guestcode);
+		Guest guest = guestRepository.findByGuestcode(guestcode);
 		ReservationEditForm reservationEditForm = new ReservationEditForm();
 		reservationEditForm.setFirstname(guest.getFirstname());
 		reservationEditForm.setLastname(guest.getLastname());
@@ -63,16 +58,14 @@ public class RegisterService {
 		reservationEditForm.setPhonenumber(guest.getPhonenumber());
 		reservationEditForm.setMailaddress(guest.getMailaddress());
 		return reservationEditForm;
-		
 	}
-//	public Guest findOne(String guestcode) {
-//		
-//		return guestRepository.findByGuestcode(guestcode);
-//	}
-//    public Planinformation findTwe(String plancode) {
-//		
-//		return planinformationRepository.findByPlancode(plancode);
-//	}
-	
-	
+	//	public Guest findOne(String guestcode) {
+	//		
+	//		return guestRepository.findByGuestcode(guestcode);
+	//	}
+	//    public Planinformation findTwe(String plancode) {
+	//		
+	//		return planinformationRepository.findByPlancode(plancode);
+	//	}
+
 }

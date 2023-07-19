@@ -9,7 +9,9 @@ import com.example.reservationsystem.domain.entity.Address;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,9 +27,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class ReservationEditForm {
+	@NotNull
 	private String guestcode;
+	@NotEmpty
 	private String firstname;
+	@NotEmpty
 	private String lastname;
+	@Past
 	private LocalDate dateofbirth;
 	private Address address;
 	//セレクトタグで住所選択用

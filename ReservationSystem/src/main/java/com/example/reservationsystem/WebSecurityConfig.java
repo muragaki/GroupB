@@ -37,7 +37,8 @@ public class WebSecurityConfig {
 				.logoutSuccessUrl("/planlist")
 		).authorizeHttpRequests(authz -> authz
 				.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-				.requestMatchers("/","/planlist","/register").permitAll()
+				.requestMatchers("/","/planlist","/register","/register?").permitAll()
+				.requestMatchers("/endreservation").permitAll()
 				.requestMatchers("/mainmenu").permitAll()
 				.requestMatchers("/picture/**").permitAll()
 				.requestMatchers("/img/imgpicture/**").permitAll()
