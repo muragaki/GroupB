@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body {
+	text-align: center;
+	background-image: url("/img/imgpicture/oka2.jpg");
+}
+
+a {
+	color: white;
+}
