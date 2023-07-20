@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+	body {
+   font-family: "Source Code Pro", monospace;
+  font-size: 18px; /* 好きなフォントサイズに変更 */
+}
+
+.typing-animation {
+	width: 16.2ch;	/*文字の長さ*/
+	border-right: 4.5px solid #000;	/*点滅バー*/
+	overflow: hidden;	/*必須*/
+	white-space: nowrap;	/*必須*/
+	color:rgb(0, 0, 0);
+	font-size:4.0rem;
+	line-height:1.4;
+	font-weight:700;
+	animation: typing 2.5s steps(9), blink .4s step-end infinite alternate;	/*アニメーション関連*/
+	margin: 0;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+@keyframes blink {
+	50% {
+		border-color: transparent;		/*点滅風に見せる*/
+	}
+}

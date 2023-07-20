@@ -1,71 +1,89 @@
 @charset "UTF-8";
 
 
-/*その他と主な共通部分は省略*/
+@charset "UTF-8";
 
-a.btn-flat {
-  position: relative; /* 要素の位置を相対的に設定 */
-  display: inline-block; /* 要素をインラインブロックとして表示 */
-  overflow: hidden;
+body {
+  font-size: 18px; /* 好きなフォントサイズに変更 */
+}
 
-  padding: 1.5rem 6rem;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
 
-  color: #fff;
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-border {
+  margin-bottom: 12px;
+  padding: 0;
+
+  -webkit-transition: all 0.3s;
+
+  transition: all 0.3s;
+
   border-radius: 0;
-  background: #000;
-  
-  
 }
 
-div.btn-container {
+a.btn-border span {
   position: relative;
+
+  display: block;
+
+  padding: 1.25rem 3rem;
+
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  background: rgb(128, 255, 0);
 }
 
-a.btn-flat span {
-  position: relative;
-  z-index: 1;
+
+
+a.btn-border:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
 }
 
-a.btn-flat:before {
-  position: absolute;
-  top: 0;
-  left: calc(-150% + 50px);
-
-  width: 150%;
-  height: 500%;
-
-  content: '';
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  -webkit-transform: rotate(45deg) translateX(0) translateY(0);
-  transform: rotate(45deg) translateX(0) translateY(0);
-
-  background: #fff100;
+a.btn-border:hover:before {
+  bottom: -5px;
 }
 
-a.btn-flat:after {
-  position: absolute;
-  top: -400%;
-  right: calc(-150% + 50px);
-
-  width: 150%;
-  height: 500%;
-
-  content: '';
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  -webkit-transform: rotate(45deg) translateX(0) translateY(0);
-  transform: rotate(45deg) translateX(0) translateY(0);
-
-  background: #fff100;
+a.btn-border:active {
+  -webkit-transform: translate(0, 7px);
+  transform: translate(0, 7px);
 }
 
-a.btn-flat:hover:before {
-  -webkit-transform: rotate(45deg) translateX(0) translateY(-50%);
-  transform: rotate(45deg) translateX(0) translateY(-50%);
-}
-
-a.btn-flat:hover:after {
-  -webkit-transform: rotate(45deg) translateX(0) translateY(50%);
-  transform: rotate(45deg) translateX(0) translateY(50%);
+a.btn-border:active:before {
+  bottom: -1px;
 }

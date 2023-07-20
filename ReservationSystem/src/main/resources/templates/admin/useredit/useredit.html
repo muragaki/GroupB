@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザー編集画面</title>
+<link th:href="@{/css/flatbutton.css}" rel="styleSheet">
+<link th:href="@{/css/typing-animation.css}" rel="styleSheet">
 </head>
 <body>
- <h1>ユーザー編集</h1>
+ <h1><p class="typing-animation">ユーザー編集画面</p></h1>
 
    <table>
         <tr>
@@ -31,7 +33,7 @@
         <td><input type="submit" value="変更(未実装)" /></td>
     </table>
 
-
-    <a th:href="@{/admin/usersearch}">ユーザー一覧に戻る</a>
+	<a th:href="@{/admin/usersearch}" class="btn btn-border">ユーザー一覧に戻る</a>
+<!--    <a th:href="@{/admin/usersearch}">ユーザー一覧に戻る</a>-->
 </body>
 </html>
