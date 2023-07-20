@@ -43,6 +43,10 @@ public class WebSecurityConfig {
 				.requestMatchers("/picture/**").permitAll()
 				.requestMatchers("/img/imgpicture/**").permitAll()
 				.requestMatchers("/admin/**").hasRole("ADMIN")
+				.requestMatchers("/deckchair").permitAll()
+				.requestMatchers("/hawaiidinner").permitAll()
+				.requestMatchers("/jrsuite").permitAll()
+				.requestMatchers("/yukata").permitAll()
 				.anyRequest().authenticated()
 		);
 		return http.build();		

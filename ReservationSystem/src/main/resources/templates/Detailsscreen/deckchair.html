@@ -2,24 +2,48 @@
 <html xmlns:th="http;//www.thymeleaf.org">
 <head >
 <meta charset="UTF-8">
-<title>詳細</title>
+<title>【デッキチェア確約！】ピクニックステイプラン詳細</title>
+<style>
+  .photo-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 写真を水平方向（横方向）に中央に配置 */
+    gap: 10px;
+  }
+
+  .photo-flexbox img {
+    flex: 0 0 calc(33.33% - 10px); /* 3列になるように調整 */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .photo-flexbox figure {
+    text-align: center; /* テキストを中央に配置 */
+    max-width: 33.33%;
+    margin: 10px;
+  }
+</style>
+
 </head>
 <body>
 	<div class="photo-flexbox">
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck2.jpg" alt="写真2">
-  <figcaption>デイプール＆プールサイドでピクニックステイ♪（ランチBOX＆朝食付き）</figcaption>
+  <img src="/picture/deck2.jpg" alt="写真2">
+  <figcaption>デイプール＆プールサイドでピクニックステイ♪</figcaption>
+   <figcaption>(ランチBOX＆朝食付き）</figcaption>
 </figure>	
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck3.jpg" alt="写真3">
+  <img src="/picture/deck3.jpg" alt="写真3">
   <figcaption>プラン特典としてデッキチェアをお1人さま1台確約！</figcaption>
 </figure>	
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck1.jpg" alt="写真1">
-  <figcaption>生ハムとクリームチーズを使ったクロワッサンサンド ・いちごのクレープ ・ポテトチップス ・パッションフルーツスカッシュ</figcaption>
+  <img src="/picture/deck1.jpg" alt="写真1">
+  <figcaption>生ハムとクリームチーズを使ったクロワッサンサンド </figcaption>
+   
+    <figcaption>パッションフルーツスカッシュ</figcaption>
 </figure>	
 <figure>
-   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck4.jpg" alt="写真3">
+   <img src="/picture/deck4.jpg" alt="写真3">
    <figcaption>朝食 「リュクスダイニングハプナ」メインタワー1F／和食・洋食</figcaption>
 </figure>	
 

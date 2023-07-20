@@ -2,24 +2,45 @@
 <html xmlns:th="http;//www.thymeleaf.org">
 <head >
 <meta charset="UTF-8">
-<title>詳細</title>
+<title>ハワイアンディナーブッフェで満腹ステイプラン詳細</title>
+<style>
+  .photo-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 写真を水平方向（横方向）に中央に配置 */
+    gap: 10px;
+  }
+
+  .photo-flexbox img {
+    flex: 0 0 calc(33.33% - 10px); /* 3列になるように調整 */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .photo-flexbox figure {
+    text-align: center; /* テキストを中央に配置 */
+    max-width: 33.33%;
+    margin: 10px;
+  }
+</style>
 </head　>
+
 <body>
-<!--	<div class="photo-flexbox">-->
+	<div class="photo-flexbox">
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/dinner1.jpg" alt="写真1">
+  <img src="/picture/dinner1.jpg" alt="写真1">
   <figcaption>2023年夏はハワイアンブッフェ特別メニューをお届けいたします！</figcaption>
 </figure>	
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/dinner3.jpg" alt="写真3">
+  <img src="/picture/dinner3.jpg" alt="写真3">
   <figcaption>いろどり豊かなカクテルでお楽しみ下さい。</figcaption>
 </figure>	
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/dinner2.jpg" alt="写真2">
+  <img src="/picture/dinner2.jpg" alt="写真2">
   <figcaption>50種類以上のお料理をお楽しみいただけます。</figcaption>
 </figure>	
 <figure>
-   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/dinner4.jpg" alt="写真3">
+   <img src="/picture/dinner4.jpg" alt="写真4">
    <figcaption>リゾート地を思わせるブッフェレストラン「LUXE DINING HAPUNA」 季節ごとの新しいメニューをご用意しております</figcaption>
 </figure>	
 

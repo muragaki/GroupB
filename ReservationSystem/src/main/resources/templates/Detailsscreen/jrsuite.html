@@ -2,24 +2,48 @@
 <html xmlns:th="http;//www.thymeleaf.org">
 <head >
 <meta charset="UTF-8">
-<title>詳細</title>
+<title>【ジュニアスイート確約！】SNS映え！きらめくナイトプールプランの詳細</title>
+<style>
+  .photo-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 写真を水平方向（横方向）に中央に配置 */
+    gap: 10px;
+  }
+
+  .photo-flexbox img {
+    flex: 0 0 calc(33.33% - 10px); /* 3列になるように調整 */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .photo-flexbox figure {
+    text-align: center; /* テキストを中央に配置 */
+    max-width: 33.33%;
+    margin: 10px;
+  }
+</style>
+
+
+
 </head>
 <body>
 	<div class="photo-flexbox">
 <figure>
-   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/Jスィート.jpg" alt="写真3">
+   <img src="/picture/Jスィート.jpg" alt="写真3">
  <figcaption>jrスイートを特別料金でご宿泊可能です</figcaption>
 </figure>	
 <figure>  
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/ナイトプール2.jpg" alt="写真1">
+  <img src="/picture/ナイトプール2.jpg" alt="写真1">
   <figcaption> SNS映え間違いなし！プールで夕涼み</figcaption>
 </figure>	
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/ナイトプール3.jpg" alt="写真2">
-  <figcaption>エモーショナルにきらめくナイトプールで魅惑的な音楽を聞きながら夜風を感じて</figcaption>
+  <img src="/picture/ナイトプール3.jpg" alt="写真2">
+  <figcaption>エモーショナルにきらめくナイトプールで</figcaption>
+   <figcaption>魅惑的な音楽を聞きながら</figcaption>
 </figure>	
 <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/ナイトプール4.jpg" alt="写真3">
+  <img src="/picture/ナイトプール4.jpg" alt="写真3">
   <figcaption>室内プールでも泳いでいただけます</figcaption>
 </figure>
   

@@ -16,4 +16,5 @@ public ArrayList<Planinformation> readAll() {
 	return (ArrayList<Planinformation>) planinfomationrepository.findAll();
 
 }
+
 }
