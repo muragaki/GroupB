@@ -1,6 +1,7 @@
 package com.example.reservationsystem.domain.entity;
 
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;

@@ -48,13 +48,13 @@ public ArrayList<RoomForm> findAll(){
  */
 public void roomChange(Integer resnumber,String roomnumber) {
 	Reservation res = reservationRepository.findByResnumber(resnumber);
-	if(!(reservationRepository.findByResnumber(resnumber).getRoomnumber()==null)) {
-	if(!(reservationRepository.findByResnumber(resnumber).getRoomnumber().equalsIgnoreCase(roomnumber))) {
+	if(!(roomnumber.equalsIgnoreCase(""))){
 		res.setRoomnumber(roomnumber);
+		res.setRoomnumber(roomInformationRepository.findByRoomnumber(roomnumber).getRoomnumber());
 		reservationRepository.save(res);
-	}
-	}else if(!(roomnumber.equalsIgnoreCase(""))){
+	}else {
 		res.setRoomnumber(roomnumber);
+		res.setRoomnumber(roomInformationRepository.findByRoomnumber(roomnumber).getRoomnumber());
 		reservationRepository.save(res);
 	}
 }
