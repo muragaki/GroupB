@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http;//www.thymeleaf.org">
+<head >
+<meta charset="UTF-8">
+<title>詳細</title>
+</head>
+<body>
+	<div class="photo-flexbox">
+<figure>
+   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/Jスィート.jpg" alt="写真3">
+ <figcaption>jrスイートを特別料金でご宿泊可能です</figcaption>
+</figure>	
+<figure>  
+  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/ナイトプール2.jpg" alt="写真1">
+  <figcaption> SNS映え間違いなし！プールで夕涼み</figcaption>
+</figure>	
+<figure>
+  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/ナイトプール3.jpg" alt="写真2">
+  <figcaption>エモーショナルにきらめくナイトプールで魅惑的な音楽を聞きながら夜風を感じて</figcaption>
+</figure>	
+<figure>
+  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/ナイトプール4.jpg" alt="写真3">
+  <figcaption>室内プールでも泳いでいただけます</figcaption>
+</figure>
+  
+  <!-- 追加の写真をここに追加 -->
+</div>
+	<style>
+  .photo-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .photo-flexbox img {
+    flex: 0 0 calc(33.33% - 10px); /* 3列になるように調整 */
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+
+
+
+
+</body>
+</html>

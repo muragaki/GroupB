@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http;//www.thymeleaf.org">
+<head >
+<meta charset="UTF-8">
+<title>詳細</title>
+</head>
+<body>
+	<div class="photo-flexbox">
+<figure>
+  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck2.jpg" alt="写真2">
+  <figcaption>デイプール＆プールサイドでピクニックステイ♪（ランチBOX＆朝食付き）</figcaption>
+</figure>	
+<figure>
+  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck3.jpg" alt="写真3">
+  <figcaption>プラン特典としてデッキチェアをお1人さま1台確約！</figcaption>
+</figure>	
+<figure>
+  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck1.jpg" alt="写真1">
+  <figcaption>生ハムとクリームチーズを使ったクロワッサンサンド ・いちごのクレープ ・ポテトチップス ・パッションフルーツスカッシュ</figcaption>
+</figure>	
+<figure>
+   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/deck4.jpg" alt="写真3">
+   <figcaption>朝食 「リュクスダイニングハプナ」メインタワー1F／和食・洋食</figcaption>
+</figure>	
+
+  <!-- 追加の写真をここに追加 -->
+</div>
+	<style>
+  .photo-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .photo-flexbox img {
+    flex: 0 0 calc(33.33% - 10px); /* 3列になるように調整 */
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+
+
+
+
+</body>
+</html>

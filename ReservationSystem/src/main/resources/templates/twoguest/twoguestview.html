@@ -4,18 +4,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Two Guest</title>
+	<link th:href="@{/css/twoguest.css}" rel="styleSheet">
+	<div class="mv">
+  <!--  メイン全体を囲うdiv  -->
+  <div class="mv-wrap">
+    <!--   薄いレイヤー   -->
+    <div class="mv-bg"></div>
+    <!--   videoタグ   -->
+    <video id="video" webkit-playsinline="" playsinline="" muted="" autoplay="" loop=""
+      src="/img/imgpicture/hana.mp4"></video>
+    <!--   動画の上に載せるテキスト   -->
+    <p class="mv-txt"></p>
+  </div>
+</div>
 </head>
 
 <body>
-	<table border="1" th:object="${guest}" align="center">
+	<table style="margin: 0 auto;" border="1" th:object="${guest}">
 		<tr>
 			<th align="center">
-				<p>性</p>
+				<p>First Name</p>
 			</th>
 			<td th:text="*{firstname}" align="center"></td>
 			<input type="hidden" name="firstname" th:value="*{firstname}"> 
+			</tr>
+			<tr>
 			<th>
-				<p>名　　　　　</p>
+				<p>Last Name</p>
 			</th>
 			<td th:text="*{lastname}"></td>
 			<input type="hidden" name="lastname" th:value="*{lastname}"> 

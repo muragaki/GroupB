@@ -4,22 +4,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>BookingDetails</title>
+	<link th:href="@{/css/booking.css}" rel="styleSheet">
 </head>
 
 <body>
-	<form th:action="@{/bookingdetails}" method="post" th:object="${reservation}">
-		<table border="1">
+	<form th:action="@{bookingdetails}" method="post" th:object="${reservation}">
+		<table style="margin: 0 auto;" border="1">
 			<tr>
-				<th align="center"	><p>性</p></th>
+				<th align="center"	><p>First Name</p></th>
 				<td th:text="*{guest.firstname}" align="center"></td>
-				
-				<th><p>名　　　　　</p></th>
+			</tr>
+			<tr>	
+				<th><p>Last Name</p></th>
 				<td th:text="*{guest.lastname}"></td>
 			</tr>
 			<tr>
 				<th><p>予約番号　</p></th>
 				<td th:text="*{resnumber}"></td>
-			<input type="hidden" th:field="${reservation.resnumber}">	
+
 			</tr>
 			<tr>
 				<th><p>到着日　</p></th>
@@ -40,10 +42,11 @@
 			<tr >
 				<th><p>部屋タイプ</p></th>
 				<td>
-				<select name="room" th:field="*{roomnumber}">
-					<option th:each="room:${roomList}" th:value="*{roomnumber}" th:text="${room.roomname}">
+				<select th:name="roomnumber" th:field="${reservation.roomnumber}">
+					<option th:each="room : ${roomList}"th:value="${room.roomnumber}"  
+						selected="${room.roomnumber} == *{roomnumber}">[[${room.roomname}]]
 					</option>
-				<input type="hidden" th:value="${room}" >
+					<input type="hidden" th:value="*{roomnumber}" >
 				</select>
 				</td>
 			</tr>
@@ -51,9 +54,12 @@
 				<th><p>予約人数　</p></th>
 				<td th:text="*{persons}"></td>
 			</tr>
+			
 			<tr>
-<!--			<td><button>部屋タイプを変更する</button></td>-->
-		
+			<td><button>部屋タイプを変更する</button></td>
+			<input type="hidden" th:field="${reservation.guestcode}">	
+			<input type="hidden" th:field="${reservation.resnumber}">	
+			<input type="hidden" th:field="${reservation.plancode}">	
 				</tr>
 		</table>
 

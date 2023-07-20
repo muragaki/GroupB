@@ -20,13 +20,14 @@ public class BookingDetails {
 	BookingDetailsService bookingDetailsservice;
 	
 	@GetMapping("/bookingdetails")
-	String example(@RequestParam("reservation")Integer resnumber, Model model) {
-			Reservation reservation = bookingDetailsservice.findOne(resnumber);
+	String example(Reservation reservation,@RequestParam("reservation")Integer resnumber, Model model) {
+			if(reservation.getResnumber()==null) {
+			 reservation = bookingDetailsservice.findOne(resnumber);
 			ArrayList<RoomForm>roomList = new ArrayList<>();
-			//nullでない場合はセレクトタグ配列に追加
+			//部屋タイプがnullでない場合はセレクトタグ配列に追加
 			if(!(reservation.getNumber()== null)) {
 				roomList.add(new RoomForm(reservation.getNumber().getRoomnumber(),reservation.getNumber().getRoomname()));
-			//nullの場合は、空文字に置き換えて追加
+			//部屋タイプがnullの場合は、空文字に置き換えて追加
 			}else {
 				roomList.add(new RoomForm("",""));
 			}
@@ -36,16 +37,32 @@ public class BookingDetails {
 		model.addAttribute("roomList",roomList);
 		model.addAttribute("reservation",reservation);
 		return "bookingdetails/bookingdetailsview";
+			}else {
+				ArrayList<RoomForm>roomList = new ArrayList<>();
+				//部屋タイプがnullでない場合はセレクトタグ配列に追加
+				if(!(reservation.getNumber()== null)) {
+					roomList.add(new RoomForm(reservation.getNumber().getRoomnumber(),reservation.getNumber().getRoomname()));
+				//部屋タイプがnullの場合は、空文字に置き換えて追加
+				}else {
+					roomList.add(new RoomForm("",""));
+				}
+				for(RoomForm room:bookingDetailsservice.findAll()) {
+					roomList.add(room);
+				}
+			model.addAttribute("roomList",roomList);
+			model.addAttribute("reservation",reservation);
+			return "bookingdetails/bookingdetailsview";
+			}
 	}
 	@PostMapping("bookingdetails")
-	String roomChange(Integer resnumber,String roomnumber,Model model) {
-		bookingDetailsservice.roomChange(resnumber, roomnumber);
-		Reservation reservation = bookingDetailsservice.findOne(resnumber);
+	String roomChange(Reservation reservation,Model model) {
+		bookingDetailsservice.roomChange(reservation.getResnumber(), reservation.getRoomnumber());
+		Reservation reservation1 = bookingDetailsservice.findOne(reservation.getResnumber());
 		ArrayList<RoomForm>roomList = new ArrayList<>();
 		//nullでない場合はセレクトタグ配列に追加
-		if(!(reservation.getNumber()== null)) {
-			roomList.add(new RoomForm(reservation.getNumber().getRoomnumber(),reservation.getNumber().getRoomname()));
-		//nullの場合は、空文字に置き換えて追加
+		if(!(reservation1.getNumber()== null)) {
+			roomList.add(new RoomForm(reservation1.getNumber().getRoomnumber(),reservation1.getNumber().getRoomname()));
+//		//nullの場合は、空文字に置き換えて追加
 		}else {
 			roomList.add(new RoomForm("",""));
 		}
@@ -53,7 +70,7 @@ public class BookingDetails {
 			roomList.add(room1);
 		}
 	model.addAttribute("roomList",roomList);
-	model.addAttribute("reservation",reservation);
+	model.addAttribute("reservation",reservation1);
 		return"bookingdetails/bookingdetailsview";
 	}
 }
