@@ -6,10 +6,28 @@
 	<title>BookingDetails</title>
 	<link th:href="@{/css/booking.css}" rel="styleSheet">
 </head>
-
+<style>
+.example{
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+}
+</style>
 <body>
+	<div class="mv">
+  <!--  メイン全体を囲うdiv  -->
+  <div class="mv-wrap">
+    <!--   薄いレイヤー   -->
+    <div class="mv-bg"></div>
+    <!--   videoタグ   -->
+    <video id="video" webkit-playsinline="" playsinline="" muted="" autoplay="" loop=""
+      src="/img/imgpicture/hugu.mp4"></video>
+    <!--   動画の上に載せるテキスト   -->
+<!--    <p class="mv-txt">kasumiblog</p>-->
+  </div>
+</div>
 	<form th:action="@{bookingdetails}" method="post" th:object="${reservation}">
-		<table style="margin: 0 auto;" border="1">
+		<table style="margin: 0 auto;" border="1" class="example">
 			<tr>
 				<th align="center"	><p>First Name</p></th>
 				<td th:text="*{guest.firstname}" align="center"></td>
