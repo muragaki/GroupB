@@ -13,6 +13,7 @@ import com.example.reservationsystem.domain.service.PlanListService.PlanListServ
 @Controller
 
 public class PlanListContoroller {
+	private static final Object deckchair = null;
 	@Autowired
 	PlanListService planlistservice;
 	@GetMapping("planlist")
@@ -25,7 +26,7 @@ public class PlanListContoroller {
 		return"planlist/planlistview";
 	}
     
-	@GetMapping("deckchair")
+	@GetMapping("/deckchair")
 	String deckchair(Model model) {
 		
 		return "Detailsscreen/deckchair";

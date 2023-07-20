@@ -20,14 +20,13 @@
 		<tr th:each="plan: ${planlist}" align="center" >
 			<form th:action="@{register}" method="post">
 				<td th:text="${plan.planname}"></td>
-<!--				<td><img th:src="@{./static/picture} (item=${plan.jpg.jpg1})}"></td>-->
 				<td th:text="${plan.remarks}"></td>
-				
 				<td><input type="submit" value="予約" /></td>
 				<input type="hidden" name="plancode" th:value="${plan.plancode}">
-                <td><a th:href="@{/}">写真</a></td>
+                
 			</form>
 		</tr>
+		<tr
 	</table>
 		
 
