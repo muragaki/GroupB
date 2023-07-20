@@ -25,8 +25,24 @@ public class PlanListContoroller {
 		return"planlist/planlistview";
 	}
     
-	
-	
-	
+	@GetMapping("deckchair")
+	String deckchair(Model model) {
+		
+		return "Detailsscreen/deckchair";
+		
+	}
+	@GetMapping("hawaiidinner")
+	String hawaiidinner() {
+		return "Detailsscreen/hawaiidinner";
+		
+	}
+	@GetMapping("jrsuite")
+	String templates() {
+		return "Detailsscreen/jrsuite";
+	}
+	@GetMapping("yukata")
+	String yukata() {
+		return "Detailsscreen/yukata";
+	}
 
 }
