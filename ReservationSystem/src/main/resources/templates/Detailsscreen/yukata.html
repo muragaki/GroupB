@@ -2,23 +2,50 @@
 <html xmlns:th="http;//www.thymeleaf.org">
 <head >
 <meta charset="UTF-8">
-<title>詳細</title>
-</head >
+<title>夏を感じる浴衣de水族館ステイプランの詳細</title>
+<style>
+  .photo-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 写真を水平方向（横方向）に中央に配置 */
+    gap: 10px;
+  }
+
+  .photo-flexbox img {
+    flex: 0 0 calc(33.33% - 10px); /* 3列になるように調整 */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .photo-flexbox figure {
+    text-align: center; /* テキストを中央に配置 */
+    max-width: 33.33%;
+    margin: 10px;
+  }
+</style>
+
+
+
+</head>
 <body>
+	<div class="photo-flexbox">
+
 <figure>
-<img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yukata1.jpg" alt="写真1">
-<figcaption>浴衣は250種類以上ある中から、お気に入りの浴衣に着替えていただきます。</figcaption>
+<img src="/picture/yukata1.jpg" alt="写真1">
+<figcaption>浴衣は250種類以上ある中から、</figcaption>
+<figcaption>お気に入りの浴衣に着替えていただきます。</figcaption>
 </figure>	
 <figure>	
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yukata2.jpg" alt="写真2">
-  <figcaption>水族館のチケット付き。幻想的で涼しい水族館にお出かけいただけます。</figcaption>
+  <img src="/picture/yukata2.jpg" alt="写真2">
+  <figcaption>水族館のチケット付き。</figcaption>
+   <figcaption>幻想的で涼しい水族館にお出かけいただけます。</figcaption>
   </figure>
   <figure>
-  <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yukata3.jpg" alt="写真3">
+  <img src="/picture/yukata3.jpg" alt="写真3">
   <figcaption> 素敵な浴衣を選んではお持ち帰りください。</figcaption>
   </figure>
   <figure>
-   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yukata4.jpg" alt="写真3">
+   <img src="/picture/yukata4.jpg" alt="写真3">
    <figcaption>旅の思い出に浴衣お出かけくださいで </figcaption>
   </figure>
   

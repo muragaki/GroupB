@@ -13,7 +13,7 @@ import com.example.reservationsystem.domain.service.PlanListService.PlanListServ
 @Controller
 
 public class PlanListContoroller {
-	private static final Object deckchair = null;
+	
 	@Autowired
 	PlanListService planlistservice;
 	@GetMapping("planlist")
@@ -32,16 +32,16 @@ public class PlanListContoroller {
 		return "Detailsscreen/deckchair";
 		
 	}
-	@GetMapping("hawaiidinner")
+	@GetMapping("/hawaiidinner")
 	String hawaiidinner() {
 		return "Detailsscreen/hawaiidinner";
 		
 	}
-	@GetMapping("jrsuite")
+	@GetMapping("/jrsuite")
 	String templates() {
 		return "Detailsscreen/jrsuite";
 	}
-	@GetMapping("yukata")
+	@GetMapping("/yukata")
 	String yukata() {
 		return "Detailsscreen/yukata";
 	}

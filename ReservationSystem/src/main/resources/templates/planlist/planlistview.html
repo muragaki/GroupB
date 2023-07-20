@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http;//www.thymeleaf.org">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>プラン一覧</title>
 </head>
 <body>
-	
-	
-	<table border="1">
-		<tr>
-			<th>プラン</th>
-			<th>イメージ</th>					
-<!--			<th>内容</th>-->
-			<th>予約</th>
-			<th>詳細</th>
-		</tr>
-		<tr>
-		</tr>
-		<tr th:each="plan: ${planlist}" align="center" >
-			<form th:action="@{register}" method="post">
-				<td th:text="${plan.planname}"></td>
-				<td th:text="${plan.remarks}"></td>
-				<td><input type="submit" value="予約" /></td>
-				<input type="hidden" name="plancode" th:value="${plan.plancode}">
-                
-			</form>
-		</tr>
-		<tr
-	</table>
-		
+
+<!-- プラン情報を表示するテーブル -->
+<table border="1">
+    <tr>
+        <th>プラン</th>
+        <!-- イメージ -->
+        <th>予約</th>
+        <th>詳細</th>
+    </tr>
+    <tr th:each="plan: ${planlist}" align="center">
+        <form th:action="@{register}" method="post">
+            <!-- プラン名を表示 -->
+            <td th:text="${plan.planname}"></td>
+            <!-- イメージの列は削除 -->
+            <td th:text="${plan.remarks}"></td>
+
+            <!-- 予約ボタン -->
+            <td><input type="submit" value="予約" /></td>
+            <!-- 隠しフィールドでプランコードをサーバーに送信 -->
+            <input type="hidden" name="plancode" th:value="${plan.plancode}">
+            <!-- リンクで写真ページに移動 -->
+            <td><a th:href="@{${plan.jpg.jpg1}}">写真</a></td>
+
+        </form>
+    </tr>
+</table>
+
+<!-- Deckchairページへのリンク（"/deckchair"と仮定） -->
+<a href="/deckchair">Deckchairページへ移動</a>
 
 </body>
 </html>
+
+
+
