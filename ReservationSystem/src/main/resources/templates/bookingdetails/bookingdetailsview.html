@@ -8,6 +8,9 @@
 </head>
 
 <body>
+	
+		<span th:text="${error}" color="red">
+	</span>
 	<form th:action="@{bookingdetails}" method="post" th:object="${reservation}">
 		<table style="margin: 0 auto;" border="1">
 			<tr>

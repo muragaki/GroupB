@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,7 +57,26 @@ public class BookingDetails {
 			}
 	}
 	@PostMapping("bookingdetails")
-	String roomChange(Reservation reservation,Model model) {
+	String roomChange(@Validated Reservation reservation,BindingResult br, Model model) {
+		if(br.hasErrors()) {
+			Reservation reservation1 = bookingDetailsservice.findOne(reservation.getResnumber());
+			ArrayList<RoomForm>roomList = new ArrayList<>();
+			//nullでない場合はセレクトタグ配列に追加
+			if(!(reservation1.getNumber()== null)) {
+				roomList.add(new RoomForm(reservation1.getNumber().getRoomnumber(),reservation1.getNumber().getRoomname()));
+//			//nullの場合は、空文字に置き換えて追加
+//			}else {
+//				roomList.add(new RoomForm("",""));
+			}
+			for(RoomForm room1:bookingDetailsservice.findAll()) {
+				roomList.add(room1);
+			}
+			String error= "過去の予約のため、部屋タイプは変更できません。";
+		model.addAttribute("error",error);
+		model.addAttribute("roomList",roomList);
+		model.addAttribute("reservation",reservation1);
+		return"bookingdetails/bookingdetailsview";
+		}
 		bookingDetailsservice.roomChange(reservation.getResnumber(), reservation.getRoomnumber());
 		Reservation reservation1 = bookingDetailsservice.findOne(reservation.getResnumber());
 		ArrayList<RoomForm>roomList = new ArrayList<>();
