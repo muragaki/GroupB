@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<form action="@{/reservation}" method="get" th:object="${reservation}">
+	<form th:action="@{bookingdetails}" method="post" th:object="${reservation}">
 		<table style="margin: 0 auto;" border="1">
 			<tr>
 				<th align="center"	><p>First Name</p></th>
@@ -40,8 +40,6 @@
 				<td th:text="*{guest.phonenumber}"></td>
 			</tr>
 			<tr >
-				<th><p>部屋番号　</p></th>
-				<td th:text="*{roomnumber}"></td>
 				<th><p>部屋タイプ</p></th>
 				<td>
 				<select th:name="roomnumber" th:field="${reservation.roomnumber}">
