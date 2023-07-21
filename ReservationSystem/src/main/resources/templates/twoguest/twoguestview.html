@@ -5,7 +5,11 @@
 	<meta charset="UTF-8">
 	<title>Two Guest</title>
 	<link th:href="@{/css/twoguest.css}" rel="styleSheet">
-	<div class="mv">
+<!--	<link th:href="@{/css/white.css}" rel="styleSheet">-->
+</head>
+
+<body>
+<div class="mv">
   <!--  メイン全体を囲うdiv  -->
   <div class="mv-wrap">
     <!--   薄いレイヤー   -->
@@ -14,12 +18,9 @@
     <video id="video" webkit-playsinline="" playsinline="" muted="" autoplay="" loop=""
       src="/img/imgpicture/hana.mp4"></video>
     <!--   動画の上に載せるテキスト   -->
-    <p class="mv-txt"></p>
+<!--    <p class="mv-txt">kasumiblog</p>-->
   </div>
 </div>
-</head>
-
-<body>
 	<table style="margin: 0 auto;" border="1" th:object="${guest}">
 		<tr>
 			<th align="center">
@@ -61,7 +62,8 @@
 	</form>
 	</tr>
 	</table>
-	<a th:href="@{/mainmenu}">メインメニューへ戻る</a>
+<!--	<a th:href="@{/mainmenu}">メインメニューへ戻る</a>-->
+	<a th:href="@{/mainmenu}" class="btn btn-border">メインメニューへ戻る</a>
 
 </body>
 
