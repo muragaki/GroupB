@@ -3,11 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <title>予約登録</title>
+<style>
+  body {
+    /* 背景画像を指定 */
+    background-image: url("picture/umimi.jpg");
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
+    background-size: cover; /* 背景画像を全体に表示 */
+    background-position: center center; /* 背景画像を中央に配置 */
+    color: rgb(0, 0, 0); /* テキストの色を白に設定 */
+  }
+  
+  textarea {
+	text-align:center ;
+	width: 500px;  /* 横幅 */
+	height: 20px; /* 高さ */
+}
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid rgb(0, 0, 64); /* 枠線の色を白に設定 */
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: rgb(128, 255, 255); /* ヘッダー行の背景色を設定 */
+  }
+</style>
+
+
+
+
+
 </head>
+
+
 <body>
 	 
 	
-	   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yakei1.jpg" alt="夜景" title="ホテルからの夜景">
+<!--	   <img src="file:///C:/Users/3030667/git/GroupB/ReservationSystem/src/main/resources/static/picture/yakei1.jpg" alt="夜景" title="ホテルからの夜景">-->
 		
 		
 		<form th:action="@{/endreservation}" method="post" th:object="${reservationEditForm}">
@@ -15,49 +54,50 @@
   
  
 		<table border="1">
-			<tr><td><label><b>プラン名</b></label></td>
-				<td><input type="text" th:name="planName" th:value="*{plan.planName}" readonly/></td>
+			<tr><td><text><b>プラン名</b></text></td>
+				<td><textarea th:text="${reservationEditForm.plan.planName}"min="15"  readonly></textarea>
+					<input type="hidden" th:name="planName" th:value="*{plan.planName}" /></td>
 			</tr>	
 			<tr>
 				<td><label><b>宿泊人数</b></label></td>
 				<td><input type="number" name="persons" th:value="*{persons}" min="1" max="4" required/></td>
-				<td><span th:errors="*{persons}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{persons}" style="color:red"></span></td>-->
 				
 			</tr>
 			<tr>
 				<td><label><b>チェックイン</b></label></td>
 				<td><input type="date" name="arrday" th:value="*{arrday}" required/></td>
-				<td><span th:errors="*{arrday}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{arrday}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b>チェックアウト</b></label></td>
 				<td><input type="date" name="depday" th:value="*{depday}" required/></td>
-				<td><span th:errors="*{depday}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{depday}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b>お客様ID</b></label></td>
 				<td><input type="text" th:name="guestcode" th:value="*{guestcode}" required/></td>
-				<td><span th:errors="*{guestcode}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{guestcode}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b>苗字</b></label></td>
 				<td><input type="text" th:name="firstname" th:value="*{firstname}" required/></td>
-				<td><span th:errors="*{firstname}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{firstname}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b>名前</b></label></td>
 				<td><input type="text" th:name="lastname" th:value="*{lastname}" required/></td>
-				<td><span th:errors="*{lastname}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{lastname}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b>誕生日</b></label></td>
 				<td><input type="date" name="dateofbirth" th:value="*{dateofbirth}" required/></td>
-				<td><span th:errors="*{dateofbirth}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{dateofbirth}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b> 電話番号(ハイフンなし)</b></label></td>
 				<td><input type="tel" pattern="[\d]{10,}" name="phonenumber" th:value="*{phonenumber}" required/></td>
-				<td><span th:errors="*{phonenumber}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{phonenumber}" style="color:red"></span></td>-->
 			</tr>
 		     <tr>
 				<td><b>住所</b>
@@ -69,12 +109,12 @@
 				</select>
 				<input type="hidden" th:field="${reservationEditForm.addressList}" />
 				</td>
-				<td><span th:errors="*{address}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{address}" style="color:red"></span></td>-->
 			</tr>
 			<tr>
 				<td><label><b>メールアドレス</b></label></td>
 				<td><input type="email" name="mailaddress" th:value="*{mailaddress}" required/></td>
-				<td><span th:errors="*{mailaddress}" style="color:red"></span></td>
+<!--				<td><span th:errors="*{mailaddress}" style="color:red"></span></td>-->
 			</tr>
 		</table>
 		<input type="submit" value="予約" />

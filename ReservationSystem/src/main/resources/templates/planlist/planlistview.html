@@ -3,6 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>プラン一覧</title>
+<style>
+  body {
+    /* 背景画像を指定 */
+    background-image: url("picture/umimi.jpg");
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
+    background-size: cover; /* 背景画像を全体に表示 */
+    background-position: center center; /* 背景画像を中央に配置 */
+    color: rgb(0, 0, 0); /* テキストの色を白に設定 */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid rgb(0, 0, 64); /* 枠線の色を白に設定 */
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: rgb(0, 255, 255); /* ヘッダー行の背景色を設定 */
+  }
+</style>
+
+
+<!-- 以前のHTMLコード -->
+
 </head>
 <body>
 
@@ -10,10 +39,13 @@
 <table border="1">
     <tr>
         <th>プラン</th>
+        <th>内容</th>
         <!-- イメージ -->
         <th>予約</th>
         <th>詳細</th>
     </tr>
+     
+    
     <tr th:each="plan: ${planlist}" align="center">
         <form th:action="@{register}" method="post">
             <!-- プラン名を表示 -->
@@ -33,7 +65,7 @@
 </table>
 
 <!-- Deckchairページへのリンク（"/deckchair"と仮定） -->
-<a href="/deckchair">Deckchairページへ移動</a>
+
 
 </body>
 </html>
